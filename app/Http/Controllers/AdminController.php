@@ -70,8 +70,41 @@ class AdminController extends Controller
        $fine = '';
        $tipo = '';
 
-       if($request->Start_stats == null){
-           $request->Start_stats = '2000-04-06';
+       if($request->Inizio == null){
+           $request->Inizio = '2020-04-06';
        }
+       else {
+           $inizio = $request->Inizio;
+       }
+
+       if($request->Fine == null){
+           $request->Fine = '2030-04-06';
+       }
+       else {
+           $fine = $request->Fine;
+       }
+
+       $opzionate = $this->_opzionate->getOpzionate($request->Tipo, $request->Inizio, $request->Fine);
+       $tutte_offerte = $this->_catalogo->getTutteOfferte($request->Tipo, $request->Inizio, $request->Fine);
+       $alloggi_locati = $this->_opzionate->getNonDisponibili($request->Tipo, $request->Inizio, $request->Fine);
+
+       switch($request->Tipo){
+           case 'Appartamento': $tipo = 'Appartamento';
+                                break;
+           case 'Posto Singolo': $tipo = 'Posto Singolo';
+                                 break;
+           case 'Posto Doppio': $tipo = 'Posto Doppio';
+                                break;
+           case 'Tutti': $tipo = 'Appartamento & Posto Singolo & Posto Doppio';
+           default: $tipo = 'Appartamento & Posto Singolo & Posto Doppio';
+       }
+
+       return view('stats')
+             ->with('Inizio', $inizio)
+             ->with('Fine', $fine)
+             ->with('Tipo', $tipo)
+             ->with('opzionate', $opzionate)
+             ->with('tutte_offerte', $tutte_offerte)
+             ->with('alloggi_locati', $alloggi_locati);
    }
 }

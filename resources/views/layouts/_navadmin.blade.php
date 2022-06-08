@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 80px; color:papayawhip">
   <a class="navbar-brand" href="{{route('admin')}}">HOME</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0" method = "POST" action ="{{route('logout')}}">
     @csrf
-      <input class="btn btn-outline-success mr-sm-2" type="submit" value ="Logout">
+      <input class="btn btn-outline-success mr-sm-2" type="submit" value ="Logout" style=" background-color: blue; border: 0px; color: white;">
     </form>
 
   </div>

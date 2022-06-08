@@ -11,28 +11,30 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/stile.css')}}">
   </head>
-  <body>
   @section('content')
-  <div class="introwho">
+  <div class="introwho3">
   </div>
-  <div class="intro2who">
-  <div class="titolowho">
-    <h2 >Benvenuto/a!</h2>
-  </div>
-  <hr class="linea">
-  <div class="row divfoto">
-    <div class="textwho col">
-      <h4> Nella home potrai vedere il catalogo degli alloggi disponibili, effettuando anche un filtraggio iniziale ridotto. Se sei
+  <div style=" position: absolute; color:white; height: 300px;"></div>
+
+   <div class="intro">
+      <div class="title2">
+    <h2 class="benvenuto">Benvenuto/a!</h2>
+    <hr class="linea" style="border-bottom: 0px;">
+     <div class="row divfoto">
+         <div class="textwho col testo">
+      <h4 style="color: black;"> Nella home potrai vedere il catalogo degli alloggi disponibili, effettuando anche un filtraggio iniziale ridotto. Se sei
       un utente già registrato, ti consigliamo di effettuare il Login. Se sei un utente guest ancora non registrato, corri a registrarti
       per poter usufruire al meglio del sito!</h4>
     </div>
     <div class=" col offset-md-1">
-    <img src="images/logoUnivPM.png" class="fotologo">
+    <img src="images/logouni.png" class="logo">
     </div>
   </div>
+  </div>
 </div>
+
 <form action="{{route('home_filtrata')}}" method="GET">
   {{ csrf_field() }}
 <div class="contenitore">    
@@ -62,7 +64,7 @@
 </div>
 </form>
 
-<div class="catalogo">
+<div class="contenitore">
     
         @empty($filtrati)
         @foreach($catalogo_intero as $alloggio)
@@ -110,5 +112,4 @@
 </div>
   @endsection
     
-  </body>
 </html>

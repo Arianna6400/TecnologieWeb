@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="height: 80px; color:papayawhip">
   <a class="navbar-brand" href="{{route('home')}}">HOME</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -20,9 +20,12 @@
       </li>
       
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-    <a class="btn btn-outline-success mr-sm-2" type="submit" href="{{route('login')}}">Login</a>
-      <a class="btn btn-outline-success my-2 my-sm-0" type="submit" href="{{route('register')}}">Registrati</a>
-    </form>
+     <form action="{{route('login')}}" method="GET"> 
+        <button class="btn btn-outline-success mr-sm-2" type="submit" style=" background-color: red; border: 0px; color: white; padding-top: -2%;">Login</button>
+        </form>
+      
+      <form action="{{route('register')}}" method="GET"> 
+        <button class="btn btn-outline-success mr-sm-2" type="submit" style=" background-color: red; border: 0px; color: white; padding-top: -2%;">Registrati</button>
+        </form>
   </div>
 </nav>

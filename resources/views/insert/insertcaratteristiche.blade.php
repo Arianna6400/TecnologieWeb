@@ -11,54 +11,57 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/stile.css')}}">
   </head>
   <body>
   @section('content')
+  <div class="introwho3">
+  </div>
+
     @csrf
     @if($alloggio->Tipo == 'Appartamento')
     <h2 class="titolo"> Inserisci il tuo {{$alloggio->Tipo}} </h2>
     @else
     <h2 class="titolo"> Inserisci la tua {{$alloggio->Tipo}} </h2>
     @endif
-  <div class="form-group contenitore">
+   <div class="contenitore" style=" margin-bottom: 100px;">
   {{ Form::open(array('route' => 'submit', 'id' => 'addproduct', 'files' => true, 'class' => 'contact-form')) }}
   @if($alloggio->Tipo == 'Appartamento')
   <div class="form-group">
         {{ Form::label('Ripostiglio', 'Disponibilità ripostiglio', ['class' => 'label-input']) }}
-        {{ Form::select('Ripostiglio', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'input','id' => 'Ripostiglio']) }}
+        {{ Form::select('Ripostiglio', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'text_label','id' => 'Ripostiglio']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('Sala', 'Disponibilità sala', ['class' => 'label-input']) }}
-        {{ Form::select('Sala', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'input','id' => 'Sala']) }}
+        {{ Form::select('Sala', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'text_label','id' => 'Sala']) }}
     </div>
     @endif
     <div class="form-group">
         {{ Form::label('SessoRichiesto', 'Sesso richiesto', ['class' => 'label-input']) }}
-        {{ Form::select('SessoRichiesto', ['M' => 'Maschio', 'F' => 'Femmina'], '', ['class' => 'input','id' => 'SessoRichiesto']) }}
+        {{ Form::select('SessoRichiesto', ['M' => 'Maschio', 'F' => 'Femmina'], '', ['class' => 'text_label','id' => 'SessoRichiesto']) }}
     </div>
 
     <div class="form-group">
         {{ Form::label('WiFi', 'Disponibilità WiFi', ['class' => 'label-input']) }}
-        {{ Form::select('WiFi', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'input','id' => 'WiFi']) }}
+        {{ Form::select('WiFi', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'text_label','id' => 'WiFi']) }}
     </div>
     @if($alloggio->Tipo == 'Appartamento')
     <div class="form-group">
         {{ Form::label('Garage', 'Disponibilità Garage', ['class' => 'label-input']) }}
-        {{ Form::select('Garage', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'input','id' => 'Garage']) }}
+        {{ Form::select('Garage', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'text_label','id' => 'Garage']) }}
     </div>
     @endif
     {{Form::hidden('Username', auth()->user()->Username)}}
 
     <div class="form-group">
         {{ Form::label('AngoloStudio', 'Disponibilità angolo studio', ['class' => 'label-input']) }}
-        {{ Form::select('AngoloStudio', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'input','id' => 'AngoloStudio']) }}
+        {{ Form::select('AngoloStudio', ['1' => 'Disponibile', '0' => 'Non disponibile'], '', ['class' => 'text_label','id' => 'AngoloStudio']) }}
     </div>
     @if($alloggio->Tipo == 'Appartamento')
     <div class="form-group">
         {{ Form::label('NumeroLocali', 'Numero di locali', ['class' => 'label-input']) }}
-        {{ Form::text('NumeroLocali', '', ['class' => 'input', 'id' => 'NumeroLocali', 'required']) }}
+        {{ Form::text('NumeroLocali', '', ['class' => 'text_label', 'id' => 'NumeroLocali', 'required']) }}
             @if ($errors->first('NumeroLocali'))
                 <ul class="errors">
                     @foreach ($errors->get('NumeroLocali') as $message)
@@ -69,7 +72,7 @@
     </div>
     <div class="form-group">
         {{ Form::label('NumBagni', 'Numero Bagni', ['class' => 'label-input']) }}
-        {{ Form::text('NumBagni', '', ['class' => 'input', 'id' => 'NumBagni', 'required']) }}
+        {{ Form::text('NumBagni', '', ['class' => 'text_label', 'id' => 'NumBagni', 'required']) }}
             @if ($errors->first('NumBagni'))
                 <ul class="errors">
                     @foreach ($errors->get('NumBagni') as $message)
@@ -80,7 +83,7 @@
     </div>
     <div class="form-group">
         {{ Form::label('PostiLettoTot', 'Posti Letto Totali', ['class' => 'label-input']) }}
-        {{ Form::text('PostiLettoTot', '', ['class' => 'input', 'id' => 'PostiLettoTot', 'required']) }}
+        {{ Form::text('PostiLettoTot', '', ['class' => 'text_label', 'id' => 'PostiLettoTot', 'required']) }}
             @if ($errors->first('PostiLettoTot'))
                 <ul class="errors">
                     @foreach ($errors->get('PostiLettoTot') as $message)
@@ -92,7 +95,7 @@
     @endif
     <div class="form-group">
         {{ Form::label('EtaMinima', 'Età Minima', ['class' => 'label-input']) }}
-        {{ Form::text('EtaMinima', '', ['class' => 'input', 'id' => 'EtaMinima', 'required']) }}
+        {{ Form::text('EtaMinima', '', ['class' => 'text_label', 'id' => 'EtaMinima', 'required']) }}
             @if ($errors->first('EtaMinima'))
                 <ul class="errors">
                     @foreach ($errors->get('EtaMinima') as $message)
@@ -104,7 +107,7 @@
     @if($alloggio->Tipo == 'Appartamento')
     <div class="form-group">
         {{ Form::label('NumStanzeLetto', 'Numero Stanze da Letto', ['class' => 'label-input']) }}
-        {{ Form::text('NumStanzeLetto', '', ['class' => 'input', 'id' => 'NumStanzeLetto', 'required']) }}
+        {{ Form::text('NumStanzeLetto', '', ['class' => 'text_label', 'id' => 'NumStanzeLetto', 'required']) }}
             @if ($errors->first('NumStanzeLetto'))
                 <ul class="errors">
                     @foreach ($errors->get('NumStanzeLetto') as $message)
@@ -115,7 +118,7 @@
     </div>
     @endif
     <div  class="wrap-input  rs1-wrap-input">
-      {{ Form::submit('Conferma', ['class' => 'form-btn1']) }}
+      {{ Form::submit('Conferma', ['style' => 'background-color: #32aaee; border: 0px; color: white; padding-top: -2%;' , 'class' => 'btn btn-primary btn-lg']) }}
     </div>
 
 </div>

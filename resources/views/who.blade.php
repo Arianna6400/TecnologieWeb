@@ -3,27 +3,27 @@
 @section('title', 'Chi Siamo')
 
 @section('content')
-<div class="introwho">
-</div>
-<div class="intro2who">
-  <div class="titolowho">
-    <h2 >Chi siamo?</h2>
-  </div>
-  <hr class="linea">
-  <div class="row divfoto">
-    <div class="textwho col">
-      <h4>Piacere! Siamo Arianna , Joshua , Marco e Michele. In questa sezione del nostro sito troverete informazioni riguardanti i nostri scopi, le nostre passioni e ciò che ci spinge a 
-        fare quello che facciamo. </h4>
+<div class="introwho3"></div>
+<div class="intro">
+      <div class="title2">
+    <h2 class="benvenuto">Benvenuto/a!</h2>
+    <hr class="linea" style="border-bottom: 0px;">
+     <div class="row divfoto">
+         <div class="textwho col testo">
+      <h4 style="color: black;"> Piacere! Siamo Arianna , Joshua , Marco e Michele. In questa sezione del nostro sito troverete informazioni riguardanti i nostri scopi, le nostre passioni e cio che ci spinge a 
+        fare quello che facciamo.</h4>
     </div>
     <div class=" col offset-md-1">
-    <img src="images/logoUnivPM.png" class="fotologo">
+    <img src="images/logouni.png" class="logo">
     </div>
   </div>
+  </div>  
 </div>
+
 <div class="whopage1">
   <div class="row ">
     <div class="col-md-4">
-      <img src="images/studenti.jpg" class="card-img immaginewho" alt="...">
+      <img src="images/studenti.jpg" class="card-img immaginewho">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -48,7 +48,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <img src="images/ingegneria.jpg" class="card-img immaginewho" alt="...">
+      <img src="images/ingegneria.jpg" class="card-img immaginewho">
     </div>
   </div>
 </div>

@@ -3,29 +3,30 @@
 @section('title', 'Cosa offriamo')
 
 @section('content')
-<div class="introwho">
-</div>
-<div class="intro2who">
-  <div class="titolowho">
-    <h2 >Cosa offriamo?</h2>
+<div class="introwho3">
   </div>
-  <hr class="linea">
-  <div class="row divfoto">
-    <div class="textwho col">
-      <h4> Per agevolare il processo di offerta e ricerca dell'alloggio adatto per studenti,
+
+<div class="intro">
+      <div class="title2">
+    <h2 class="benvenuto">Cosa offriamo?</h2>
+    <hr class="linea" style="border-bottom: 0px;">
+     <div class="row divfoto">
+         <div class="textwho col testo">
+      <h5 style="color: black;">Per agevolare il processo di offerta e ricerca dell'alloggio adatto per studenti,
       abbiamo creato questa piattaforma in cui i locatori potranno inserire le loro offerte, e i potenziali locatari avranno la possibilità
-      di selezionare l'alloggio più adatto alle loro esigenze e mettersi in contatto con i proprietari attraverso la nostra sezione di messaggistica.</h4>
+      di selezionare l'alloggio più adatto alle loro esigenze e mettersi in contatto con i proprietari attraverso la nostra sezione di messaggistica.</h5>
     </div>
     <div class=" col offset-md-1">
-    <img src="images/logoUnivPM.png" class="fotologo">
+    <img src="images/logouni.png" class="logo">
     </div>
+  </div>
   </div>
 </div>
 
 <div class="whopage1">
   <div class="row ">
     <div class="col-md-4">
-      <img src="images/locatore.jpg" class="card-img immaginewho" alt="...">
+      <img src="images/locatore.jpg" class="card-img immaginewho">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -43,7 +44,7 @@
 <div class="whopage1">
   <div class="row ">
     <div class="col-md-4">
-      <img src="images/locatario.jpg" class="card-img immaginewho" alt="...">
+      <img src="images/locatario.jpg" class="card-img immaginewho">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -77,7 +78,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <img src="images/domanda.jpg" class="card-img immaginewho" alt="...">
+      <img src="images/domanda.jpg" class="card-img immaginewho">
     </div>
   </div>
 </div>

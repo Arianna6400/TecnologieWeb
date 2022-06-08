@@ -7,16 +7,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Author     : joshuaciccolini
 */
 
-.intro{
-    background-image: url(http://localhost/TecWeb/public/images/imagewall.jpg);
-    background-size: 1800px; 
+.intro {
+    background-image: url(http://localhost/progettotec/public/images/imagewall.jpg);
+    background-size: 1800px;
     background-position: -10%;
-  height : 400px;
-  text-align: left;
-  padding-left:15%;
-  padding-top:8px;
-  color:white;
-  
+    height: 400px;
+    text-align: left;
+    padding-left: 15%;
+    padding-top: 8px;
+    color: white;
 }
 
 .title2{

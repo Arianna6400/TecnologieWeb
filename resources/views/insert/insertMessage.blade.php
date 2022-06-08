@@ -11,13 +11,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/stile.css')}}">
   </head>
   <body>
   @section('content')
+  <div class="introwho3">
+  </div>
     @csrf
     <h2 class="titolo">Scrivi il tuo messaggio</h2>
-  <div class="form-group contenitore2">
+   <div class="contenitore" style=" margin-bottom: 100px;">
     @if(Auth::user()->role == 'Locatario')
         {{ Form::open(array('route' => 'addmessage', 'id' => 'nuovomess', 'class' => 'contact-form')) }}
     @else
@@ -26,7 +28,7 @@
     <div class="form-row ">
     <div class="form-group form">
         {{ Form::label('Mittente', 'Mittente', ['class' => 'label-input']) }}
-        {{ Form::text('Mittente', $usernameLoggato, ['class' => 'input', 'id' => 'Mittente' , 'required', 'readonly']) }}
+        {{ Form::text('Mittente', $usernameLoggato, ['class' => 'text_label', 'id' => 'Mittente' , 'required', 'readonly']) }}
             @if ($errors->first('Mittente'))
                 <ul class="errors">
                     @foreach ($errors->get('Mittente') as $message)
@@ -38,7 +40,7 @@
     <div class="form-row ">
     <div class="form-group form">
         {{ Form::label('Destinatario', 'Destinatario', ['class' => 'label-input']) }}
-        {{ Form::text('Destinatario', $destinatario, ['class' => 'input', 'id' => 'Destinatario' , 'required', 'readonly']) }}
+        {{ Form::text('Destinatario', $destinatario, ['class' => 'text_label', 'id' => 'Destinatario' , 'required', 'readonly']) }}
             @if ($errors->first('Destinatario'))
                 <ul class="errors">
                     @foreach ($errors->get('Destinatario') as $message)
@@ -52,7 +54,7 @@
     <div class="form-row ">
     <div class="form-group form">
         {{ Form::label('IdAlloggio', 'IdAlloggio', ['class' => 'label-input']) }}
-        {{ Form::number('IdAlloggio', $alloggio, ['class' => 'input', 'id' => 'IdAlloggio' , 'required', 'readonly']) }}
+        {{ Form::number('IdAlloggio', $alloggio, ['class' => 'text_label', 'id' => 'IdAlloggio' , 'required', 'readonly']) }}
             @if ($errors->first('IdAlloggio'))
                 <ul class="errors">
                     @foreach ($errors->get('IdAlloggio') as $message)
@@ -66,7 +68,7 @@
     <div class="form-row ">
     <div class="form-group form">
         {{ Form::label('Data', 'Data', ['class' => 'label-input']) }}
-        {{ Form::text('Data', $data, ['class' => 'input', 'id' => 'Data' , 'required', 'readonly']) }}
+        {{ Form::text('Data', $data, ['class' => 'text_label', 'id' => 'Data' , 'required', 'readonly']) }}
             @if ($errors->first('Data'))
                 <ul class="errors">
                     @foreach ($errors->get('Data') as $message)
@@ -80,7 +82,7 @@
     <div class="form-row ">
     <div class="form-group form">
         {{ Form::label('Orario', 'Orario', ['class' => 'label-input']) }}
-        {{ Form::text('Orario', $orario, ['class' => 'input', 'id' => 'Orario' , 'required','readonly']) }}
+        {{ Form::text('Orario', $orario, ['class' => 'text_label', 'id' => 'Orario' , 'required','readonly']) }}
             @if ($errors->first('Data'))
                 <ul class="errors">
                     @foreach ($errors->get('Orario') as $message)
@@ -94,7 +96,7 @@
     <div class="form-row ">
     <div class="form-group form">
         {{ Form::label('Contenuto', 'Contenuto', ['class' => 'label-input']) }}
-        {{ Form::textarea('Contenuto', '', ['class' => 'input', 'id' => 'Contenuto' , 'required']) }}
+        {{ Form::textarea('Contenuto', '', ['class' => 'text_label', 'id' => 'Contenuto' , 'required']) }}
             @if ($errors->first('Contenuto'))
                 <ul class="errors">
                     @foreach ($errors->get('Contenuto') as $message)
@@ -107,7 +109,7 @@
     
     
     <div  class="wrap-input  rs1-wrap-input titolo">
-        {{ Form::submit('Conferma', ['class' => 'btn btn-primary btn-lg']) }}
+        {{ Form::submit('Conferma', ['style' => 'background-color: #32aaee; border: 0px; color: white; padding-top: -2%;' , 'class' => 'btn btn-primary btn-lg']) }}
     </div>
     </div>
 

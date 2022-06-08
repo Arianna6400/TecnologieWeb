@@ -11,7 +11,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/stile.css')}}">
     <script src="{{asset('js/functions.js')}}"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script>
@@ -30,7 +30,7 @@
   @section('content')
   @csrf
   <h2 class="titolo">Profilo utente</h2>
-  <div class= "contenitore2">
+  <div class= "contenitore" style="margin-bottom: 100px;">
       {{ Form::open(array('route' => 'modprofilo', 'id' => 'modificaprofilo', 'class' => 'contact-form')) }}
       <div class="cont">
         <h4>Informazioni anagrafiche :</h4>
@@ -75,9 +75,9 @@
       {{ Form::text('role', $utente->role, ['class' => 'input', 'id' => 'inputruolo', 'readonly' => 'true']) }}
     </div>
     <hr>
-    <div class="form-row centrato">
+    <div class="form-row">
       <div class = 'btn btn-outline-success' id = 'conferma' >Conferma</div>
-      <button type="button" id='modifica' class="btn btn-outline-success" onclick="modify()">Modifica</button>
+      <button type="button" id='modifica' class="btn btn-outline-success mr-sm-2" style=" background-color: orange; border: 0px; color: white; padding-top: -2%;" onclick="modify()">Modifica</button>
     </div>
   </div>
 
