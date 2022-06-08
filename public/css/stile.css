@@ -1,0 +1,511 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 giu 2022, 16:30:04
+    Author     : joshuaciccolini
+*/
+
+.intro{
+    background-image: url(http://localhost/TecWeb/public/images/imagewall.jpg);
+    background-size: 1800px; 
+    background-position: -10%;
+  height : 400px;
+  text-align: left;
+  padding-left:15%;
+  padding-top:8px;
+  color:white;
+  
+}
+
+.title2{
+    background-color: rgba(255,255,255,0.5); 
+    width: 630px; 
+    position: relative;
+    left: -1%; 
+    height: 300px;
+    width: 1300px;
+    margin-top: 40px; 
+    box-shadow: 20px 20px 50px grey;
+}
+
+.logo{
+    height: 200px; 
+    width: 550px; 
+    position: relative; 
+    top:-10%; 
+    right: -10%;
+    margin-right: 0px;
+}
+
+.contnew2{
+     border: 0px; 
+     background-color:rgba(0,0,0,0.07); 
+     box-shadow: 20px 20px 50px grey;
+     margin-top:2%;
+     margin-right: auto;
+     margin-left: auto;
+     width : 50%;
+     padding: 20px;
+     text-align:center;
+     position: relative;
+     border : 3px solid;
+}
+
+.cat{
+    border: 0px; 
+    background-color:rgba(0,0,0,0.07);
+    box-shadow: 20px 20px 50px grey;  margin-top:2%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+    width : 50%;
+    padding: 20px;
+}
+
+
+    body {margin:0;
+      background-image: url(sfondo.jpg);
+      width: 100%;
+      height: auto;
+      background-size: 100%;
+        }
+
+.body_color {
+    background-color: white;
+}
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+header{
+    height: 190px;
+}
+
+.search{
+    height: 350px;
+    width: 1200px;
+    border: 3px #04AA6D solid;
+    position: absolute;
+    left: 17%;
+    border-radius: 15px;
+    
+}
+.search_background{
+    height: 350px;
+    width: 1200px;
+    background-color: white;
+    opacity: 0.8;
+    position: absolute;
+    left: 17%;
+    border: 3px #04AA6D solid;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+}
+/* The container */
+.container {
+  display: block-inline;
+  position:relative;
+  padding-left: 50px;
+  margin-bottom: 0px;
+  margin-left: 130px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  
+}
+
+.contenitore{
+  border : 0px;
+  margin-top:2%;
+  margin-right: auto;
+  margin-left: auto;
+  width : 50%;
+  padding: 40px;
+  text-align:center;
+  box-shadow: 20px 20px 50px grey;
+  
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius:10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: green;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/*.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #04AA6D;
+   color: white;
+   text-align: center;
+}
+.footer_icon{
+    position:absolute;
+    display: block-inline;
+      width: 10px;
+    height:10px;
+    
+}*/
+
+.offert_background{
+    height: 2000px;
+    width: 1200px;
+    background-color: white;
+    opacity: 0.8;
+    position: absolute;
+    left: 17%;
+    top: 70%;
+    border: 3px #04AA6D solid;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+}
+.prova{
+  position:fixed;
+  bottom : 0;
+  height : 100px;
+  background-color: powderblue;
+}
+.form1{
+  text-align:center;
+}
+
+.searchbuttoncittà{
+  padding-top: 3%;
+  padding-bottom:2%;
+}
+
+.footer-basic {
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+
+.form-login {
+  border: 1px solid;
+  border-color: black;
+  border-radius: 7px;
+  margin-top:2%;
+  margin-right: auto;
+  margin-left: auto;
+  width : 50%;
+  padding: 20px;
+  text-align:center;
+}
+.faq{
+  margin: 2% 15% 5% 2%;
+}
+.textfaq{
+  margin : 3% 40% 5% 2%
+}
+
+.form-register {
+    border: 1px solid;
+    border-color: black;
+    border-radius: 7px;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    padding: 20px;
+    text-align: center;
+}
+.orznt-fltr {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.vrtc_filter {
+    margin-top: 20px;
+    margin-left: 20px;
+    float: right;
+    box-shadow: 20px 20px 50px grey;
+}
+.form{
+  text-align: left;
+}
+.titolo{
+  text-align: center;
+  margin-top:2%;
+}
+.contenitore2{
+  border : 3px solid;
+  margin-top:2%;
+  margin-right: auto;
+  margin-left: auto;
+  width : 50%;
+  padding: 2%;
+}
+.spazio{
+  margin-right:1%;
+  margin-left:1%;
+}
+.piccolo{
+  width:15%;
+}
+.piccolissimo{
+  width: 8%;
+}
+.whopage1{
+  text-align:center;
+  margin:8% auto 13%;
+  width:70%;
+  height: 60%;
+}
+.immaginewho{
+  border-radius: 15px 50px;
+  margin-right: 5%;
+}
+.introwho3{
+     background-color: whitesmoke;
+  height : 40px;
+  margin : 0px;
+  text-align: left;
+  padding-left:15%;
+  padding-top:8px;
+  color:white;
+  
+}
+
+.linea{
+  border: 1px solid red;
+  width:4%;
+  margin-left: 0%;
+}
+.textwho{
+  margin-top:2%;
+  width:40%;
+}
+
+.divfoto{
+ width:90%;
+}
+
+.square{
+    background-color: white;
+    opacity:0.8;
+    position:absolute;
+    left:35%;
+    top:20%;
+      border: 3px #04AA6D solid;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+}
+
+.wrap-input {
+  width: 100%;
+  position: relative;
+  background-color: transparent;
+  margin-bottom: 12px;
+  
+}
+
+.button{
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.background{
+    padding: 20px;
+    background-color: white;
+    opacity: 0.8;
+    border: 3px #04AA6D solid;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,1), 0 6px 20px 0 rgba(0,0,0,1);
+}
+
+.input {
+  display: block;
+  width: 90%; 
+  background: #f2f2f2;
+  border-radius: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #686868;
+  line-height: 1.2;
+  padding: 5px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-top: 5px;
+}
+
+.benvenuto{
+    color: black;
+    position: relative; 
+    left: 2%
+}
+
+.app{
+    max-width: 800px;
+    border-radius: 10px;
+}
+
+.testo{
+    position: relative; 
+    left: 2%; 
+    border-top: 0px;
+    color: black;
+}
+
+.static2{
+    height: 500px;
+    width:  1000px;
+    position: relative;
+    left:20%;
+}
+
+.cont_login{
+    height: 1000px;
+}
+
+.text_label{
+    border-radius: 10px;
+    box-shadow: 20px 20px 50px grey;
+    width: 100%;
+}
+
+.btn-cerca{
+    padding: 1%;
+    background-color: orange;
+}
+
+.btn-cerca:hover{
+    background-color: yellow;
+}
+
+.login_container{
+    height: 300px;
+    width: 500px;
+    box-shadow: 20px 20px 50px grey;
+}
