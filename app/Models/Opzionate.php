@@ -74,13 +74,13 @@ class Opzionate
 
     //per le stats dell'admin, ritorna gli alloggi totali opzionati
     public function getOpzionate($tipo, $inizio, $fine){
-        if($tipo = 'Tutti') {
-            $opzionate = Alloggio::where('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)
+        if($tipo == 'Tutti') {
+            $opzionate = Alloggio::whereDate('PeriodoInizio', ">=", $inizio)->whereDate('PeriodoFine', "<=", $fine)->where('NumOpzionate', '>', 0)
                          ->count('ID');
         }
 
         else{
-            $opzionate = Alloggio::where('Tipo', '=', $tipo)->whereBetween('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)
+            $opzionate = Alloggio::where('Tipo', '=', $tipo)->whereDate('PeriodoInizio', ">=", $inizio)->whereDate('PeriodoFine', "<=", $fine)->where('NumOpzionate', '>', 0)
                       ->count('ID');
         }
         return $opzionate;
@@ -88,13 +88,13 @@ class Opzionate
 
     //per le stats dell'admin, ritorna gli alloggi che non sono più opzionabili poichè già pieni
     public function getNonDisponibili($tipo, $inizio, $fine){
-        if($tipo = 'Tutti') {
-            $alloggi_locati = Alloggio::where('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)->where('Disponibilita', '=', 0)
-                     ->count('ID');
+        if($tipo == 'Tutti') {
+            $alloggi_locati = Alloggio::whereDate('PeriodoInizio', ">=", $inizio)->whereDate('PeriodoFine', "<=", $fine)
+                     ->where('Disponibilita', '=', 0)->count('ID');
         }
 
         else{
-            $alloggi_locati = Alloggio::where('Tipo', '=', $tipo)->whereBetween('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)
+            $alloggi_locati = Alloggio::where('Tipo', '=', $tipo)->whereDate('PeriodoInizio', ">=", $inizio)->whereDate('PeriodoFine', "<=", $fine)
                      ->where('Disponibilita', '=', 0)->count('ID');
         }
         return $alloggi_locati;

@@ -26,14 +26,15 @@ class Catalogo
     }
 
     //per le stats dell'admin, ritorna il conto di tutte le offerte di alloggi presenti nel sito
-    public function getTutteOfferte($tipo, $inizio, $fine){
-        if($tipo=='Tutti') {
-             $tutte_offerte = Alloggio::where('created_at', [$inizio, $fine])
-                       ->count('ID');
-        }
+   public function getTutteOfferte($tipo, $inizio, $fine){
 
+        if($tipo=='Tutti') {
+             $tutte_offerte = Alloggio::whereDate('PeriodoInizio', ">=", $inizio)->whereDate('PeriodoFine', "<=", $fine)
+                       ->count('ID');
+
+        }
         else{
-             $tutte_offerte = Alloggio::where('Tipo', '=', $tipo)->whereBetween('created_at', [$inizio, $fine])
+             $tutte_offerte = Alloggio::where('Tipo', '=', $tipo)->whereDate('PeriodoInizio', ">=", $inizio)->whereDate('PeriodoFine', "<=", $fine)
                       ->count('ID');
         }
         return  $tutte_offerte;

@@ -68,22 +68,17 @@ class AdminController extends Controller
 
    public function find(NewStatsRequest $request){
 
-       $inizio = '';
-       $fine = '';
-       $tipo = '';
 
-       if($request->Inizio == null){
+       if(is_null($request->Inizio)){
            $request->Inizio = '2020-04-06';
        }
-       else {
-           $inizio = $request->Inizio;
-       }
 
-       if($request->Fine == null){
+       if(is_null($request->Fine)){
            $request->Fine = '2030-04-06';
        }
-       else {
-           $fine = $request->Fine;
+
+       if(is_null($request->Tipo)){
+           $request->Tipo = 'Tutti';
        }
 
        $opzionate = $this->_opzionate->getOpzionate($request->Tipo, $request->Inizio, $request->Fine);
@@ -91,20 +86,23 @@ class AdminController extends Controller
        $alloggi_locati = $this->_opzionate->getNonDisponibili($request->Tipo, $request->Inizio, $request->Fine);
 
        switch($request->Tipo){
-           case 'Appartamento': $tipo = 'Appartamento';
+           case 'Appartamento': $request->Tipo = 'Appartamento';
                                 break;
-           case 'Stanza singola': $tipo = 'Stanza singola';
+           case 'Stanza singola': $request->Tipo = 'Stanza singola';
                                  break;
-           case 'Stanza doppia': $tipo = 'Stanza doppia';
+           case 'Stanza doppia': $request->Tipo = 'Stanza doppia';
                                 break;
-           case 'Tutti': $tipo = 'Appartamento & Stanza singola & Stanza doppia';
-           default: $tipo = 'Appartamento & Stanza singola & Stanza doppia';
+           case 'Tutti': $request->Tipo = 'Tutti';
+                         break;
+           default: $request->Tipo = 'Tutti';
        }
 
+       //dd($alloggi_locati, $opzionate, $tutte_offerte);
+
        return view('stats')
-             ->with('Inizio', $inizio)
-             ->with('Fine', $fine)
-             ->with('Tipo', $tipo)
+             ->with('Inizio', $request->Inizio)
+             ->with('Fine', $request->Fine)
+             ->with('Tipo', $request->Tipo)
              ->with('opzionate', $opzionate)
              ->with('tutte_offerte', $tutte_offerte)
              ->with('alloggi_locati', $alloggi_locati);

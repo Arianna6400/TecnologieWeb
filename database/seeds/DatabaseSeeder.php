@@ -17,17 +17,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('alloggio')->insert([
-            ['Citta' => 'Ancona', 'Via' => 'Brecce Bianche', 'NumCivico' => '16', 'Costo' => 300, 'PeriodoInizio' => date("Y-m-d"),
-             'PeriodoFine' => date("Y-m-d"), 'Metratura' => 500, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "Appartamento in zona tranquilla, a due passi dall'università di Ancona. 
+            ['Citta' => 'Ancona', 'Via' => 'Brecce Bianche', 'NumCivico' => '16', 'Costo' => 300, 'PeriodoInizio' => date("2022-05-05"),
+             'PeriodoFine' => date("2022-07-08"), 'Metratura' => 500, 'NumOpzionate' => 0, 'Disponibilita' => 0,'Descrizione' => "Appartamento in zona tranquilla, a due passi dall'università di Ancona. 
                   Consigliato per studenti di Ingegneria, Biologia e Agraria", 'Tipo' => 'Appartamento', 'Foto' => 'app1.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
-            ['Citta' => 'Ancona', 'Via' => 'Mazzini', 'NumCivico' => '69', 'Costo' => 150, 'PeriodoInizio' => date("Y-m-d"),
-             'PeriodoFine' => date("Y-m-d"), 'Metratura' => 300, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "Posto letto in appartamento nel centro della città",
+            ['Citta' => 'Ancona', 'Via' => 'Mazzini', 'NumCivico' => '69', 'Costo' => 150, 'PeriodoInizio' => date("2022-05-05"),
+             'PeriodoFine' => date("2022-07-08"), 'Metratura' => 300, 'NumOpzionate' => 1, 'Disponibilita' => 0,'Descrizione' => "Posto letto in appartamento nel centro della città",
              'Tipo' => 'Stanza singola', 'Foto' => 'app2.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
-            ['Citta' => 'Pescara', 'Via' => 'Felice Barnabei', 'NumCivico' => '90', 'Costo' => 250, 'PeriodoInizio' => date("Y-m-d"),
-             'PeriodoFine' => date("Y-m-d"), 'Metratura' => 300, 'NumOpzionate' => 0, 'Disponibilita' => 1,"Descrizione" => "Posto letto in stanza doppia vicino zona stadio e università",
+            ['Citta' => 'Pescara', 'Via' => 'Felice Barnabei', 'NumCivico' => '90', 'Costo' => 250, 'PeriodoInizio' => date("2022-07-09"),
+             'PeriodoFine' => date("2022-07-08"), 'Metratura' => 300, 'NumOpzionate' => 0, 'Disponibilita' => 0,"Descrizione" => "Posto letto in stanza doppia vicino zona stadio e università",
              'Tipo' => 'Stanza doppia', 'Foto' => 'app3.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
-            ['Citta' => 'Pescara', 'Via' => 'Marconi', 'NumCivico' => '420', 'Costo' => 280, 'PeriodoInizio' => date("Y-m-d"),
-             'PeriodoFine' => date("Y-m-d"), 'Metratura' => 500, 'NumOpzionate' => 0, 'Disponibilita' => 1,"Descrizione" => "Appartamento spazioso in zona vicino all'università di Pescara",
+            ['Citta' => 'Pescara', 'Via' => 'Marconi', 'NumCivico' => '420', 'Costo' => 280, 'PeriodoInizio' => date("2022-06-08"),
+             'PeriodoFine' => date("2022-07-09"), 'Metratura' => 500, 'NumOpzionate' => 2, 'Disponibilita' => 0,"Descrizione" => "Appartamento spazioso in zona vicino all'università di Pescara",
              'Tipo' => 'Appartamento', 'Foto' => 'app4.jpeg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
         ]);
 
