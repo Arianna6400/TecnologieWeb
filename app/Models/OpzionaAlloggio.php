@@ -25,5 +25,18 @@ public function opziona($idAlloggio, $usenameLocatario){
         $interazione->save(); 
         return $num;
     }
+    else 
+        $non_puo = "No";
+        return $non_puo;
+}
+
+public function puo_opzionare($idAlloggio, $usenameLocatario){
+        if(Interazione::where('Username', $usenameLocatario)->first() == [])
+        {
+            $num = Alloggio::find($idAlloggio);
+            return $num;
+        }
+        else 
+            return false;
 }
 }
