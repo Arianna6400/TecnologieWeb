@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="introwho3"></div>
-<div class="intro">
+<div class="intro" style="background-image: url(images/imagewall.jpg);">
       <div class="title2">
     <h2 class="benvenuto">Benvenuto/a!</h2>
     <hr class="linea" style="border-bottom: 0px;">

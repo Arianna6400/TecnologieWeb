@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
          DB::table('faq')->insert([
             ['Domanda' => 'Posso contattare direttamente il proprietario attraverso il sito?', 'Risposta' => 'Sì, è possibile attraverso il servizio di messaggistica interno al sito'],
-            ['Domanda' => 'Si possono selezionare più case e poi opzionarne una tra le preferite?', 'Risposta' => 'Sì, è possibile attraverso una pagina dedicata nel profilo utente'],
+            ['Domanda' => 'Quante case si possono opzionare?', 'Risposta' => 'In seguito alla selezione attraverso il filtraggio, si potrà effettivamente opzionare un solo alloggio'],
         ]);
 
         DB::table('alloggio')->insert([

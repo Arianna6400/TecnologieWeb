@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Http",
-    "\\app\\Http\\Requests",
-    "\\app\\Models",
-    "\\database",
-    "\\database\\seeds",
+    "\\public",
+    "\\public\\css",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\layouts"
+    "\\resources\\views\\edit",
+    "\\resources\\views\\helpers",
+    "\\resources\\views\\insert",
+    "\\resources\\views\\pagination",
+    "\\routes"
   ],
-  "SelectedNode": "\\app\\Models\\Catalogo.php",
+  "SelectedNode": "\\resources\\views\\insert\\insertFAQ.blade.php",
   "PreviewInSolutionExplorer": false
 }

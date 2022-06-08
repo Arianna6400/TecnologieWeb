@@ -17,24 +17,25 @@
 
 @section('content')
   <h2 class="titolo">Visualizzazione delle statistiche</h2>
- <div class="contenitore" style="margin-bottom: 100px;">   
+ <div class="contenitore" style="margin-bottom: 100px;">
+ {{ Form::open(array('route' => 'statsfind', 'class' => 'registration-form')) }}
   <div class="form-group">
-                    {{ Form::label('Start_stats', 'Dal', ['class' => 'form-label']) }}
-                    {{ Form::date('Start_stats','', ['class' => 'form-date-stats'])}}
-                    @if ($errors->first('Start_stats'))
+                    {{ Form::label('Inizio', 'Dal', ['class' => 'form-label']) }}
+                    {{ Form::date('Inizio','', ['class' => 'form-date-stats'])}}
+                    @if ($errors->first('Inizio'))
                         <ul class="errors">
-                            @foreach ($errors->get('Start_stats') as $message)
+                            @foreach ($errors->get('Inizio') as $message)
                             {{ $message }}</br>
                             @endforeach
                         </ul>
                     @endif
   </div>
   <div class="form-group">
-                    {{ Form::label('End_stats', 'Al', ['class' => 'form-label']) }}
-                    {{ Form::date('End_stats', '', ['class' => 'form-date-stats']) }}
-                    @if ($errors->first('End_stats'))
+                    {{ Form::label('Fine', 'Al', ['class' => 'form-label']) }}
+                    {{ Form::date('Fine', '', ['class' => 'form-date-stats']) }}
+                    @if ($errors->first('Fine'))
                         <ul class="errors">
-                            @foreach ($errors->get('end_stats') as $message)
+                            @foreach ($errors->get('Fine') as $message)
                             {{ $message }}</br>
                             @endforeach
                         </ul>
@@ -43,19 +44,19 @@
  <div class="row mb-2 col-lg-12">
             <div class="col-lg-4">
                 {{ Form::label('Appartamento', 'Appartamento', ['class' => 'form-label']) }}
-                {{ Form::radio('Tipo', '', ['class' => 'form-radio-stats']) }}
+                {{ Form::radio('Tipo', 'Appartamento', ['class' => 'form-radio-stats']) }}
             </div>
              <div class="col-lg-4">
-                {{ Form::label('Posto Singolo', 'Posto Singolo', ['class' => 'form-label']) }}
-                {{ Form::radio('Tipo', '', ['class' => 'form-radio-stats']) }}
+                {{ Form::label('Stanza singola', 'Stanza singola', ['class' => 'form-label']) }}
+                {{ Form::radio('Tipo', 'Stanza singola', ['class' => 'form-radio-stats']) }}
             </div>
             <div class="col-lg-4">
-                {{ Form::label('Posto Doppio', 'Posto Doppio', ['class' => 'form-label']) }}
-                {{ Form::radio('Tipo', '', ['class' => 'form-radio-stats']) }}
+                {{ Form::label('Stanza doppia', 'Stanza doppia', ['class' => 'form-label']) }}
+                {{ Form::radio('Tipo', 'Stanza doppia', ['class' => 'form-radio-stats']) }}
             </div>
             <div class="col-lg-4">
                 {{ Form::label('Tutti', 'Tutti i tipi', ['class' => 'form-label']) }}
-                {{ Form::radio('Tipo', '', ['class' => 'form-radio-stats']) }}
+                {{ Form::radio('Tipo', 'Appartamento & Stanza singola & Stanza doppia', ['class' => 'form-radio-stats']) }}
             </div>
             @if ($errors->first('tipo'))
                     <ul class="errors">

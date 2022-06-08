@@ -62,6 +62,8 @@ Route::get('locatore/mie_offerte', 'LocatoreController@showCatalogoMieOfferte')-
 
 Route::get('locatore/opzionate', 'LocatoreController@showAlloggiOpzionati')->name('opzionate');
 
+Route::view('locatore/utenteinteressato', 'utenteinteressato')->name('viewutente');
+
 Route::get('locatore/elimina_alloggio/{id}', 'LocatoreController@deleteLocal')->name('elimina_alloggio');
 
 Route::get('locatore/chat', 'LocatoreController@chat')->name('chatlocatore');
@@ -110,6 +112,8 @@ Route::view('admin/insertfaq','insert/insertFAQ')->name('insertfaq');
 Route::post('admin/addfaq', 'AdminController@newFaq')->name('addfaq');
 
 Route::view('admin/stats', 'stats')->name('stats');
+
+Route::post('admin/statsfind', 'AdminController@find')->name('statsfind');
 
 Route::view('admin/modfaq/{id}', 'edit/modfaq')->name('modfaq');
 

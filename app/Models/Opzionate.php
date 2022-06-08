@@ -72,10 +72,32 @@ class Opzionate
             return Alloggio::where('ID', $id->ID)->get();
     }
 
-     public function getOpzionate($tipo, $inizio, $fine){
-        if($tipo = 'Tutte') {
-            
+    //per le stats dell'admin, ritorna gli alloggi totali opzionati
+    public function getOpzionate($tipo, $inizio, $fine){
+        if($tipo = 'Tutti') {
+            $opzionate = Alloggio::where('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)
+                         ->count('ID');
         }
+
+        else{
+            $opzionate = Alloggio::where('Tipo', '=', $tipo)->whereBetween('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)
+                      ->count('ID');
+        }
+        return $opzionate;
+     }
+
+    //per le stats dell'admin, ritorna gli alloggi che non sono più opzionabili poichè già pieni
+    public function getNonDisponibili($tipo, $inizio, $fine){
+        if($tipo = 'Tutti') {
+            $alloggi_locati = Alloggio::where('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)->where('Disponibilita', '=', 0)
+                     ->count('ID');
+        }
+
+        else{
+            $alloggi_locati = Alloggio::where('Tipo', '=', $tipo)->whereBetween('created_at', [$inizio, $fine])->where('NumOpzionate', '>', 0)
+                     ->where('Disponibilita', '=', 0)->count('ID');
+        }
+        return $alloggi_locati;
     }
 }
 

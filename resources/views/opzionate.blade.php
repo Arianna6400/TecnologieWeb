@@ -43,7 +43,7 @@
                                 @if($key == $alloggio->ID)
                                     @foreach($value as $username)
                                     <!-- questa rotta deve fare la form di un messaggio -->
-                                        <a href="{{route('chatlocatore')}}">{{$username}},</a>
+                                        <a href="{{route('viewutente')}}">{{$username}},</a>
                                     @endforeach
                                 @endif
                             @endforeach

@@ -12,19 +12,19 @@
     <title>@yield('title', 'Catalogo')</title>
   </head>
        @guest
-       <body style="background-image: url(http://localhost/progettotec/public/images/Geometric2.png);">
+       <body style="background-image: url(images/Geometric2.png);">
        @endguest
 
         @can('isLocatore')
-        <body style="background-image: url(http://localhost/progettotec/public/images/colored.png);">
+        <body style="background-image: url(images/colored.png);">
         @endcan
 
         @can('isLocatario')
-        <body style="background-image: url(http://localhost/progettotec/public/images/Geometric3.png);">
+        <body style="background-image: url(images/Geometric3.png);">
         @endcan
 
         @can('isAdmin')
-        <body style="background-image: url(http://localhost/progettotec/public/images/Geometric2.png);">
+        <body style="background-image: url(images/Geometric2.png);">
         @endcan
     <div >
       @guest

@@ -17,7 +17,7 @@
   @section('content')
      <div class="introwho3">
   </div>
-  <div class="intro"></div>
+ <div class="intro" style="background-image: url(images/imagewall.jpg);"></div>
   <div class="static2">
   <h1 class="textfaq">Frequently Asked Questions </h1>
   <br>
@@ -28,7 +28,7 @@
       <div class="card-header" id="heading{{ $faqsing->ID}}">
         <h2 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ $faqsing->ID}}" aria-expanded="true" aria-controls="collapse{{ $faqsing->ID}}">
-          {{ $faqsing->Domanda}}
+          <h4> Q: {{ $faqsing->Domanda}} </h4> 
           </button>
           @auth
             @if(auth()->user()->role == 'Admin')
@@ -39,7 +39,7 @@
        </div>
        <div id="collapse{{ $faqsing->ID}}" class="collapse" aria-labelledby="heading{{ $faqsing->ID}}" data-parent="#accordionExample">
          <div class="card-body">
-         {{ $faqsing->Risposta}}
+         <h4> A: {{ $faqsing->Risposta}}  </h4>
          </div>
        </div>
      </div>

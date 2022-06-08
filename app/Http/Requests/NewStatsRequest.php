@@ -24,9 +24,9 @@ class NewStatsRequest extends FormRequest
     public function rules()
     {
         return [
-            'Tipo' => 'required|max:50',
-            'Inizio' => 'required',
-            'Fine' => 'required',
+            //'Tipo' => 'required|max:50',
+            //'Inizio' => 'required',
+            //'Fine' => 'required',
         ];
     }
 }

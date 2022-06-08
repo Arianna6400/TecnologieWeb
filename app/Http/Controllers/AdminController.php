@@ -8,6 +8,7 @@ use App\Models\Resource\Faq;
 use App\Http\Requests\NewFAQRequest;
 use App\Http\Requests\NewStatsRequest;
 use App\Models\Catalogo;
+use App\Models\Opzionate;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -19,7 +20,8 @@ class AdminController extends Controller
    public function __construct(){
        $this->middleware('can:isAdmin');
        $this->_admin = new Utenti;
-
+       
+       $this->_opzionate = new Opzionate;
        $this->_catalogo = new Catalogo;
        $this->_faq = new Faq;
        $this->_faqModel = new ListaFaq;
@@ -91,12 +93,12 @@ class AdminController extends Controller
        switch($request->Tipo){
            case 'Appartamento': $tipo = 'Appartamento';
                                 break;
-           case 'Posto Singolo': $tipo = 'Posto Singolo';
+           case 'Stanza singola': $tipo = 'Stanza singola';
                                  break;
-           case 'Posto Doppio': $tipo = 'Posto Doppio';
+           case 'Stanza doppia': $tipo = 'Stanza doppia';
                                 break;
-           case 'Tutti': $tipo = 'Appartamento & Posto Singolo & Posto Doppio';
-           default: $tipo = 'Appartamento & Posto Singolo & Posto Doppio';
+           case 'Tutti': $tipo = 'Appartamento & Stanza singola & Stanza doppia';
+           default: $tipo = 'Appartamento & Stanza singola & Stanza doppia';
        }
 
        return view('stats')

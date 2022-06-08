@@ -20,7 +20,35 @@
   @section('content')
   @csrf
   <h2 class="titolo">Profilo utente</h2>
-  <div class= "contenitore2">
+ <div class= "contenitore" style="margin-bottom: 100px;">
+      {{ Form::open(array('route' => 'chatlocatore', 'id' => 'modificaprofilo', 'class' => 'contact-form')) }}
+      <div class="cont">
+        <h4>Informazioni anagrafiche :</h4>
+      </div>
+      <div  class="wrap-input  rs1-wrap-input">
+          {{ Form::label('Nome', 'Nome :', ['class' => 'label-input']) }}
+          {{ Form::text('Nome', $utente->Nome, ['class' => 'input', 'id' => 'inputnome', 'readonly' => 'true']) }}
+      </div>
+      <div  class="wrap-input  rs1-wrap-input">
+          {{ Form::label('Cognome', 'Cognome :', ['class' => 'label-input']) }}
+          {{ Form::text('Cognome', $utente->Cognome, ['class' => 'input', 'id' => 'inputcognome', 'readonly' => 'true']) }}
+      </div>
+      <div  class="wrap-input  rs1-wrap-input">
+          {{ Form::label('DataNascita', 'Data di nascita :', ['class' => 'label-input']) }}
+          {{ Form::date('DataNascita', $utente->DataNascita, ['class' => 'input', 'id' => 'inputnascita', 'readonly' => 'true']) }}
+      </div>
+      <div  class="wrap-input  rs1-wrap-input">
+          {{ Form::label('Sesso', 'Sesso :', ['class' => 'label-input']) }}
+          {{ Form::select('Sesso', ['M' => 'Uomo', 'F' => 'Donna'], $utente->Sesso, ['class' => 'input','id' => 'inputsesso', 'disabled']) }}
+      </div>
+      <div  class="wrap-input  rs1-wrap-input">
+      {{ Form::label('Username', 'Username :', ['class' => 'label-input']) }}
+      {{ Form::text('Username', $utente->Username, ['class' => 'input', 'id' => 'inputusername', 'readonly' => 'true']) }}
+    </div>
+    <hr>
+    <div  class="wrap-input  rs1-wrap-input titolo">
+        {{ Form::submit('Contatta', ['style' => 'background-color: #32aaee; border: 0px; color: white; padding-top: -2%;' , 'class' => 'btn btn-primary btn-lg']) }}
+    </div>
 
   </div>
 
