@@ -74,30 +74,30 @@
       <h4> Caratteristiche generali: </h4>
       <div class="list-group list-group-horizontal-sm">
         <li class="list-group-item formall" ><h5> Città: </h5>
-        {{ Form::text('Citta', $offerta->Citta, ['class' => 'formall', 'id' => 'inputcitta']) }}</li>
+        {{ Form::text('Citta', $offerta->Citta, ['class' => 'formall', 'id' => 'Citta']) }}</li>
 
         <li class="list-group-item formall" ><h5> Via: </h5>
-        {{ Form::text('Via', $offerta->Via, ['class' => 'formall', 'id' => 'inputvia']) }}</li>
+        {{ Form::text('Via', $offerta->Via, ['class' => 'formall', 'id' => 'Via']) }}</li>
 
         <li class="list-group-item formall" ><h5> Numero Civico: </h5>
-        {{ Form::number('NumCivico', $offerta->NumCivico, ['class' => 'formall', 'id' => 'inputcivico']) }}</li>
+        {{ Form::number('NumCivico', $offerta->NumCivico, ['class' => 'formall', 'id' => 'NumCivico']) }}</li>
 
         <li class="list-group-item label" ><h5> Tipo: </h5> <p class="label">{{$offerta->Tipo}}</p></li>
 
         <li class="list-group-item label"><h5 > Luogo: </h5> <p class="label">Via {{$offerta->Via}}, {{$offerta->NumCivico}}, {{$offerta->Citta}}</p> </li>
 
         <li class="list-group-item"><h5> Costo: </h5> <p class="label">{{$offerta->Costo}}€ </p>
-        {{ Form::number('Costo', $offerta->Costo, ['class' => 'formall', 'id' => 'inputcosto']) }}<p class="formall">€</p></li>
+        {{ Form::number('Costo', $offerta->Costo, ['class' => 'formall', 'id' => 'Costo']) }}<p class="formall">€</p></li>
 
         <li class= "list-group-item"><h5> Periodo disponibilità: </h5> <p class="label">Dal {{$offerta->PeriodoInizio}} al {{$offerta->PeriodoFine}}</p>
         Dal {{ Form::date('PeriodoInizio', $offerta->PeriodoInizio, ['class' => 'formall', 'id' => 'inputperinizio']) }} al 
-        {{ Form::date('PeriodoFine', $offerta->PeriodoFine, ['class' => 'formall', 'id' => 'inputperfine']) }}</li>
+        {{ Form::date('PeriodoFine', $offerta->PeriodoFine, ['class' => 'formall', 'id' => 'PeriodoFine']) }}</li>
 
         <li class= "list-group-item"><h5> Metratura: </h5> <p class="label">{{$offerta->Metratura}}mq</p>
-        {{ Form::number('Metratura', $offerta->Metratura, ['class' => 'formall', 'id' => 'inputmetratura']) }}<p class="formall">mq</p></li>
+        {{ Form::number('Metratura', $offerta->Metratura, ['class' => 'formall', 'id' => 'Metratura']) }}<p class="formall">mq</p></li>
 
         <li class="list-group-item formall" ><h5> Descrizione: </h5>
-        {{ Form::textarea('Descrizione', $offerta->Descrizione, ['class' => 'formall', 'id' => 'inputdesc']) }}</li>
+        {{ Form::textarea('Descrizione', $offerta->Descrizione, ['class' => 'formall', 'id' => 'Descrizione']) }}</li>
 
         <li class= "list-group-item label"><h5> Disponibilità: </h5>
                    <div>
@@ -119,7 +119,7 @@
                     <p class="label">No</p>
                     @endif
                     </div>
-        {{ Form::select('Ripostiglio', ['1' => 'Si', '0' => 'No' ], $offerta->Ripostiglio, ['class' => 'formall','id' => 'inputripostiglio']) }}</li>
+        {{ Form::select('Ripostiglio', ['1' => 'Si', '0' => 'No' ], $offerta->Ripostiglio, ['class' => 'formall','id' => 'Ripostiglio']) }}</li>
         
         <li class="list-group-item"><h5> Sala: </h5> <div>
                     @if($offerta->Sala == 1)
@@ -128,7 +128,7 @@
                     <p class="label">No</p>
                     @endif
                     </div>
-        {{ Form::select('Sala', ['1' => 'Si', '0' => 'No' ], $offerta->Sala, ['class' => 'formall','id' => 'inputrisala']) }}</li>
+        {{ Form::select('Sala', ['1' => 'Si', '0' => 'No' ], $offerta->Sala, ['class' => 'formall','id' => 'Sala']) }}</li>
       @endif
         <li class="list-group-item"><h5> Sesso Richiesto: </h5> <div>
                     @if($offerta->SessoRichiesto == 'M')
@@ -137,7 +137,7 @@
                     <p class="label">Femmina</p>
                     @endif
                     </div>
-        {{ Form::select('SessoRichiesto', ['M' => 'Uomo', 'F' => 'Donna' ], $offerta->SessoRichiesto, ['class' => 'formall','id' => 'inputrisesso']) }}</li>
+        {{ Form::select('SessoRichiesto', ['M' => 'Uomo', 'F' => 'Donna' ], $offerta->SessoRichiesto, ['class' => 'formall','id' => 'SessoRichiesto']) }}</li>
 
         <li class="list-group-item"><h5> Wi-fi: </h5> <div>
                     @if($offerta->WiFi == 1)
@@ -146,7 +146,7 @@
                     <p class="label">No</p>
                     @endif
                     </div> 
-        {{ Form::select('Wifi', ['1' => 'Si', '0' => 'No' ], $offerta->WiFi, ['class' => 'formall','id' => 'inputriwifi']) }}</li>
+        {{ Form::select('Wifi', ['1' => 'Si', '0' => 'No' ], $offerta->WiFi, ['class' => 'formall','id' => 'Wifi']) }}</li>
 
         @if($offerta->Tipo == 'Appartamento')
         <li class="list-group-item"><h5> Garage: </h5> <div>
@@ -156,7 +156,7 @@
                     <p class="label">No</p>
                     @endif
                     </div>
-        {{ Form::select('Garage', ['1' => 'Si', '0' => 'No' ], $offerta->Garage, ['class' => 'formall','id' => 'inputrigarage']) }}</li>
+        {{ Form::select('Garage', ['1' => 'Si', '0' => 'No' ], $offerta->Garage, ['class' => 'formall','id' => 'Garage']) }}</li>
         @endif
 
         <li class="list-group-item"><h5> Angolo studio: </h5> <div>
@@ -166,23 +166,23 @@
                     <p class="label">No</p>
                     @endif
                     </div>
-        {{ Form::select('AngoloStudio', ['1' => 'Si', '0' => 'No' ], $offerta->AngoloStudio, ['class' => 'formall','id' => 'inputriangolost']) }}</li>
+        {{ Form::select('AngoloStudio', ['1' => 'Si', '0' => 'No' ], $offerta->AngoloStudio, ['class' => 'formall','id' => 'AngoloStudio']) }}</li>
 
         @if($offerta->Tipo == 'Appartamento')
           <li class="list-group-item"><h5> Numero Locali: </h5> <p class="label"> {{$offerta->NumeroLocali}} </p>
-          {{ Form::number('NumeroLocali', $offerta->NumeroLocali, ['class' => 'formall', 'id' => 'inputnlocali']) }}</li>
+          {{ Form::number('NumeroLocali', $offerta->NumeroLocali, ['class' => 'formall', 'id' => 'NumeroLocali']) }}</li>
 
           <li class="list-group-item"><h5> Numero Bagni: </h5> <p class="label"> {{$offerta->NumBagni}} </p>
-          {{ Form::number('NumBagni', $offerta->NumBagni, ['class' => 'formall', 'id' => 'inputnnbagni']) }}</li>
+          {{ Form::number('NumBagni', $offerta->NumBagni, ['class' => 'formall', 'id' => 'NumBagni']) }}</li>
               
           <li class="list-group-item"><h5> Posti Letto Totali: </h5> <p class="label"> {{$offerta->PostiLettoTot}} </p>
-          {{ Form::number('PostiLettoTot', $offerta->PostiLettoTot, ['class' => 'formall', 'id' => 'inputpostiltot']) }}</li>
+          {{ Form::number('PostiLettoTot', $offerta->PostiLettoTot, ['class' => 'formall', 'id' => 'PostiLettoTot']) }}</li>
             
           <li class="list-group-item"><h5> Numero Stanze Letto: </h5> <p class="label"> {{$offerta->NumStanzeLetto}} </p>
-          {{ Form::number('NumStanzeLetto', $offerta->NumStanzeLetto, ['class' => 'formall', 'id' => 'inputnstanzeletto']) }}</li>
+          {{ Form::number('NumStanzeLetto', $offerta->NumStanzeLetto, ['class' => 'formall', 'id' => 'NumStanzeLetto']) }}</li>
         @endif
         <li class="list-group-item"><h5> Età Minima Richiesta: </h5> <p class="label"> {{$offerta->EtaMinima}} </p> 
-        {{ Form::number('EtaMinima', $offerta->EtaMinima, ['class' => 'formall', 'id' => 'inputnetamin']) }}</li>
+        {{ Form::number('EtaMinima', $offerta->EtaMinima, ['class' => 'formall', 'id' => 'EtaMinima']) }}</li>
 
       </div>
       <div class="titolowho">

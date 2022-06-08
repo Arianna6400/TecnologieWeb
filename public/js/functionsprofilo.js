@@ -1,12 +1,12 @@
 function modify(){
     document.getElementById('modifica').style.display = 'none';
     document.getElementById('conferma').style.display = 'inline';
-    $("#inputnome").attr("readonly", false);
-    $("#inputcognome").attr("readonly", false);
-    $("#inputnascita").attr("readonly", false);
-    $("#inputsesso").attr("disabled", false);
-    $("#inputusername").attr("readonly", false);
-    $("#inputpassword").attr("readonly", false);
+    $("#Nome").attr("readonly", false);
+    $("#Cognome").attr("readonly", false);
+    $("#DataNascita").attr("readonly", false);
+    $("#Sesso").attr("disabled", false);
+    $("#Username").attr("readonly", false);
+    $("#password").attr("readonly", false);
     $("#password-confirm").attr("readonly", false);
 }
 function setup(){
@@ -32,7 +32,7 @@ function doFormValidation(actionUrl, formId) {
         dataType: "json",
         error: function (data) {
             if (data.status === 422) {
-                var errMsgs = JSON.parse(data.responseText);
+                var errMsgs = data.responseJSON['errors'];
                 $.each(errMsgs, function (id) {
                     $("#" + id).parent().find('.errors').html(' ');
                     $("#" + id).after(getErrorHtml(errMsgs[id]));
@@ -41,6 +41,7 @@ function doFormValidation(actionUrl, formId) {
         },
         success: function () {
             alert("Le modifiche sono state salvate correttamente");
+            location.reload();
             document.getElementById('modifica').style.display = 'inline';
             document.getElementById('conferma').style.display = 'none';
         },

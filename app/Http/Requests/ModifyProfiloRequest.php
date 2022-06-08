@@ -24,12 +24,12 @@ class ModifyProfiloRequest extends FormRequest
     public function rules()
     {
         return [
-            'Nome' => 'max:25',
-            'Cognome' => 'max:25',
-            'DataNascita' => '',
+            'Nome' => 'alpha|max:25',
+            'Cognome' => 'alpha|max:25',
+            'DataNascita' => 'before:today',
             'Sesso' => 'max:25',
             'Username' => 'max:25',
-            'Password' => 'min:8|max:25',
+            'password' => 'nullable|confirmed|min:8|max:25',
         ];
     }
 }

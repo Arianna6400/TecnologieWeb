@@ -24,14 +24,14 @@ class ModifyAlloggioRequest extends FormRequest
     public function rules()
     {
         return [
-            "Citta" => "max:200",
+            "Citta" => "alpha|max:200",
             "Via" => "max:200",
             "NumCivico" => "numeric",
             "Costo" => "numeric",
             "PeriodoInizio" => "date",
-            "PeriodoFine" => "date",
+            "PeriodoFine" => "date|after_or_equal:PeriodoInizio",
             "Metratura" => "numeric",
-            "Descrizione" => "max:200",
+            "Descrizione" => "min:15|max:200",
             "Ripostiglio" => "boolean",
             "Sala" => "boolean",
             "SessoRichiesto" => "alpha",

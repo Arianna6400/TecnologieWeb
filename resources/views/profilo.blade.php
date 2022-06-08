@@ -37,19 +37,19 @@
       </div>
       <div  class="wrap-input  rs1-wrap-input">
           {{ Form::label('Nome', 'Nome :', ['class' => 'label-input']) }}
-          {{ Form::text('Nome', $utente->Nome, ['class' => 'input', 'id' => 'inputnome', 'readonly' => 'true']) }}
+          {{ Form::text('Nome', $utente->Nome, ['class' => 'input', 'id' => 'Nome', 'readonly' => 'true']) }}
       </div>
       <div  class="wrap-input  rs1-wrap-input">
           {{ Form::label('Cognome', 'Cognome :', ['class' => 'label-input']) }}
-          {{ Form::text('Cognome', $utente->Cognome, ['class' => 'input', 'id' => 'inputcognome', 'readonly' => 'true']) }}
+          {{ Form::text('Cognome', $utente->Cognome, ['class' => 'input', 'id' => 'Cognome', 'readonly' => 'true']) }}
       </div>
       <div  class="wrap-input  rs1-wrap-input">
           {{ Form::label('DataNascita', 'Data di nascita :', ['class' => 'label-input']) }}
-          {{ Form::date('DataNascita', $utente->DataNascita, ['class' => 'input', 'id' => 'inputnascita', 'readonly' => 'true']) }}
+          {{ Form::date('DataNascita', $utente->DataNascita, ['class' => 'input', 'id' => 'DataNascita', 'readonly' => 'true']) }}
       </div>
       <div  class="wrap-input  rs1-wrap-input">
           {{ Form::label('Sesso', 'Sesso :', ['class' => 'label-input']) }}
-          {{ Form::select('Sesso', ['M' => 'Uomo', 'F' => 'Donna'], $utente->Sesso, ['class' => 'input','id' => 'inputsesso', 'disabled']) }}
+          {{ Form::select('Sesso', ['M' => 'Uomo', 'F' => 'Donna'], $utente->Sesso, ['class' => 'input','id' => 'Sesso', 'disabled']) }}
       </div>
     <hr>
     <div class="cont">
@@ -57,11 +57,11 @@
     </div>
     <div  class="wrap-input  rs1-wrap-input">
       {{ Form::label('Username', 'Username :', ['class' => 'label-input']) }}
-      {{ Form::text('Username', $utente->Username, ['class' => 'input', 'id' => 'inputusername', 'readonly' => 'true']) }}
+      {{ Form::text('Username', $utente->Username, ['class' => 'input', 'id' => 'Username', 'readonly' => 'true']) }}
     </div>
     <div  class="wrap-input  rs1-wrap-input">
       {{ Form::label('Password', 'Nuova password :', ['class' => 'label-input']) }}
-      {{ Form::password('password', ['class' => 'input', 'id' => 'inputpassword', 'readonly' => 'true' , 'placeholder' => 'inserisci nuova password']) }}
+      {{ Form::password('password', ['class' => 'input', 'id' => 'password', 'readonly' => 'true' , 'placeholder' => 'inserisci nuova password']) }}
     </div>
     <div  class="wrap-input">
       {{ Form::label('Password-confirm', 'Conferma password', ['class' => 'label-input']) }}

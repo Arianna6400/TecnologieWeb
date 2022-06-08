@@ -40,7 +40,7 @@ function doFormValidation(actionUrl, formId) {
         dataType:"json",
         error: function (data) {
             if (data.status === 422) {
-                var errMsgs = JSON.parse(data.responseText);
+                var errMsgs = data.responseJSON['errors'];
                 $.each(errMsgs, function (id) {
                     $("#" + id).parent().find('.errors').html(' ');
                     $("#" + id).after(getErrorHtml(errMsgs[id]));
@@ -49,9 +49,6 @@ function doFormValidation(actionUrl, formId) {
         },
         success: function () {
             alert("Le modifiche sono state salvate correttamente");
-            document.getElementById('modifica').style.display = 'inline';
-            document.getElementById('elimina').style.display = 'inline';
-            document.getElementById('conferma').style.display = 'none';
             location.reload();
         },
         contentType: false,
