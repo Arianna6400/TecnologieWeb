@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\Http\Requests\NewMessageRequest;
+use App\Http\Requests\ModifyAlloggioRequest;
 use App\Utenti;
 use App\Models\MieOfferte;
 use App\Models\Opzionate;
@@ -174,6 +175,34 @@ class LocatoreController extends Controller
         return view('profilo')->with('utente',auth()->user());
     }
     
+    public function modalloggio (ModifyAlloggioRequest $request){
+        alloggio::where('ID', $request->ID)
+                ->update(['Citta' => $request->Citta,
+                         'Via'=>$request->Via,
+                         'NumCivico'=>$request->NumCivico,
+                         'Costo'=>$request->Costo,
+                         'PeriodoInizio'=>$request->PeriodoInizio,
+                         'PeriodoFine'=>$request->PeriodoFine,
+                         'Metratura'=>$request->Metratura,
+                         'Descrizione'=>$request->Descrizione,]
+                        );
+        caratteristiche::where('ID', $request->ID)
+                ->update([ 'Ripostiglio' => $request->Ripostiglio,
+                            'Sala' => $request->Sala,
+                            'SessoRichiesto'=>$request->SessoRichiesto,
+                            'Wifi'=>$request->Wifi,
+                            'Garage'=>$request->Garage,
+                            'AngoloStudio'=>$request->AngoloStudio,
+                            'NumeroLocali'=>$request->NumeroLocali,
+                            'NumBagni'=>$request->NumBagni,
+                            'PostiLettoTot'=>$request->PostiLettoTot,
+                            'NumStanzeLetto'=>$request->NumStanzeLetto,
+                            'EtaMinima'=>$request->EtaMinima,]
+                        );
+                        
+        return response()->json(['ciao' => 'ciao']);
+    }
+
     // permette di modificare un alloggio, i dati necessari per l'inserimento vanno presi con una request
     public function updateLocal(){
         
