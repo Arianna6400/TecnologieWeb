@@ -75,6 +75,16 @@ class PublicController extends Controller
     }
 
     public function modprofilo(ModifyProfiloRequest $request){
+        if(is_null($request->password)){
+            utenti::where('username', $request->Username)
+                ->update(['Nome' => $request->Nome,
+                         'Cognome'=>$request->Cognome,
+                         'Sesso'=>$request->Sesso,
+                         'DataNascita'=>$request->DataNascita,
+                         'Username'=>$request->Username,]
+                        );
+        }
+        else{
         utenti::where('username', $request->Username)
                 ->update(['Nome' => $request->Nome,
                          'Cognome'=>$request->Cognome,
@@ -83,6 +93,7 @@ class PublicController extends Controller
                          'Username'=>$request->Username,
                          'password'=>Hash::make($request->password),]
                         );
+            }
             return response()->json(['ciao' => 'ciao']);
         
     }

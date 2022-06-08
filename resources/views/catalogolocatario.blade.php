@@ -32,27 +32,32 @@
   </div>
 </div>
 
-<form>
-<div class="contenitore">
-<div class="form-group">
-<h4 for="exampleInputEmail1" class="form1">Seleziona la città</h4>
-<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci città">
-</div>
+<form action="{{route('home_filtrata')}}" method="GET">
+  {{ csrf_field() }}
+<div class="contenitore">    
+  <div class="form-group">
+    <h4 for="exampleInputEmail1" class="form1">Seleziona la città </h4>
+    <input type="text" class="form-control" name="citta" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="inserisci città ">
+  </div>
 <div class="checkbutton">
-<div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-<label class="form-check-label" for="inlineRadio1">appartamento</label>
-</div> <div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-<label class="form-check-label" for="inlineRadio2">stanza singola </label>
-</div> <div class="form-check form-check-inline">
-<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-<label class="form-check-label" for="inlineRadio3">stanza doppia</label>
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="tipoalloggio" id="inlineRadio1" value="Appartamento">
+    <label class="form-check-label" for="inlineRadio1">appartamento</label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="tipoalloggio" id="inlineRadio2" value="Stanza singola">
+    <label class="form-check-label" for="inlineRadio2">stanza singola </label>
+  </div>
+
+  <div class="form-check form-check-inline">
+    <input class="form-check-input" type="radio" name="tipoalloggio" id="inlineRadio3" value="Stanza doppia">
+    <label class="form-check-label" for="inlineRadio3">stanza doppia</label>
+  </div>
 </div>
-</div>
-<div class="searchbuttoncittà">
-    <button type="submit" class="btn btn-primary" style=" background-color: orange; border: 0px;">Cerca</button>
-</div>
+  <div class="searchbuttoncitta ">
+    <button  type="submit" class="btn btn-primary">Cerca</button>
+  </div>
 </div>
 </form>
 <!-- filtri orizzonatali -->
