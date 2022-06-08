@@ -8,13 +8,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://localhost/TecWeb/public/css/stile.css">
+<link rel="stylesheet" href="{{asset('css/stile.css')}}">
 
 </head>
-<body style="background-image: url(http://localhost/TecWeb/public/images/Geometric3.png)">
 @section('content')
   <div class="introwho3">
   </div>
+
+  <div class="intro">
+      <div class="title2">
+    <h2 class="benvenuto">Benvenuto/a {{ Auth::user()->Nome }} {{ Auth::user()->Cognome }} !</h2>
+    <hr class="linea" style="border-bottom: 0px;">
+     <div class="row divfoto">
+         <div class="textwho col testo">
+      <h5 style="color: black;"> Nella tua home potrai scorrere l'intero catalogo, e filtrare i risultati in modo da soddisfare i tuoi criteri di ricerca. Una volta trovato
+          l'alloggio che fa al caso tuo, potrai opzionarlo e metterti in contatto con il locatore. Inoltre, potrai visualizzare il tuo
+          profilo utente ed eventualmente modificare i tuoi dati. Buona navigazione!</h5>
+    </div>
+    <div class=" col offset-md-1">
+    <img src="images/logouni.png" class="logo">
+    </div>
+  </div>
+  </div>
+</div>
+
 <form>
 <div class="contenitore">
 <div class="form-group">
@@ -213,6 +230,5 @@ Posti letto totali
 @endisset
 </div>
 @endsection
-</body>
 </html>
 

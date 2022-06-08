@@ -11,29 +11,30 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/stile.css')}}">
   </head>
-  <body>
   @section('content')
-  <div class="introwho">
+ <div class="introwho3">
   </div>
-  <div class="intro2who">
-  <div class="titolowho">
-    <h2 >Benvenuto/a {{ Auth::user()->Nome }} {{ Auth::user()->Cognome }} !</h2>
-  </div>
-  <hr class="linea">
-  <div class="row divfoto">
-    <div class="textwho col">
-      <h5>Nella tua home potrai scorrere l'intero catalogo, nel caso tu fossi interessato/a a scoprire offerte di altri locatori come te,
+
+    <div class="intro">
+      <div class="title2">
+    <h2 class="benvenuto">Benvenuto/a {{ Auth::user()->Nome }} {{ Auth::user()->Cognome }} !</h2>
+    <hr class="linea" style="border-bottom: 0px;">
+     <div class="row divfoto">
+         <div class="textwho col testo">
+      <h5 style="color: black; width: 110%;"> Nella tua home potrai scorrere l'intero catalogo, nel caso tu fossi interessato/a a scoprire offerte di altri locatori come te,
        e navigando tra le varie sezioni potrai anche visualizzare le tue offerte, le persone che hanno mostrato interesse ad una tua offerta,
        aprire la messaggistica per contattare i potenziali locatari ed inoltre visualizzare il tuo profilo, con la possibilità di modificare
        i tuoi dati. Buona navigazione! </h5>
     </div>
     <div class=" col offset-md-1">
-    <img src="images/logoUnivPM.png" class="fotologo">
+    <img src="images/logouni.png" class="logo">
     </div>
   </div>
+  </div>
 </div>
+
   <form action="{{route('home_filtrata')}}" method="GET">
   {{ csrf_field() }}
 <div class="contenitore">    
@@ -63,7 +64,7 @@
 </div>
 </form>
 
-<div class="catalogo">
+<div class="contenitore">
     
         @empty($filtrati)
         @foreach($catalogo_intero as $alloggio)
@@ -111,5 +112,4 @@
 </div>
   @endsection
     
-  </body>
 </html>

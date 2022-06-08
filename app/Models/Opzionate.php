@@ -71,6 +71,12 @@ class Opzionate
         if ($id != null)
             return Alloggio::where('ID', $id->ID)->get();
     }
+
+     public function getOpzionate($tipo, $inizio, $fine){
+        if($tipo = 'Tutte') {
+            
+        }
+    }
 }
 
 

@@ -27,7 +27,7 @@
   <body onload="setup()">
   @section('content')
   <h2 class="titolo">Visualizza l'offerta:</h2>
-  <div class="contenitore">
+  <div class="contenitore" style="margin-bottom: 100px;">
   <meta name="csrf-token" content="{{csrf_token()}}" />
   @isset($miei_alloggi)
     @foreach($miei_alloggi as $miei)
