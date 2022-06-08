@@ -8,7 +8,6 @@ function modify(){
     $("#inputusername").attr("readonly", false);
     $("#inputpassword").attr("readonly", false);
     $("#password-confirm").attr("readonly", false);
-
 }
 function setup(){
     document.getElementById('conferma').style.display = 'none';

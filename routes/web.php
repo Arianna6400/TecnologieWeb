@@ -54,6 +54,7 @@ Route::get('register', 'Auth\RegisterController@showRegistrationForm')
 Route::post('register', 'Auth\RegisterController@register')->name('confermaregistrazione');
 
 //Rotte utente locatore
+Route::post('/modificaalloggio','LocatoreController@modalloggio')->name('modifyalloggio');
 
 Route::get('/locatore', 'LocatoreController@showCatalog')
         ->name('locatore');
