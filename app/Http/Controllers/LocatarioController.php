@@ -127,10 +127,11 @@ class LocatarioController extends Controller
         //offerta è un elemento singolo
         $offerta = $this->_offertaSingola->getAlloggioSelezionato($alloggio);
         echo $offerta->ID;
+        $verifica = $this->_opziona->puo_opzionare($offerta->ID, Auth::user()->Username);
         return view('offerta')
              ->with('opzionateDa', $this->_opzionate->opzionate(Auth::user()->Username))
              ->with('offerta', $offerta)
-             ->with('esito', $this->_opziona->opziona($offerta->ID, Auth::user()->Username));
+             ->with('esito', $verifica);
     }
     
     public function showAllLocal(){
