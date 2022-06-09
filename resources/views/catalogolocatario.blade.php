@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="{{asset('css/stile.css')}}">
 
 </head>
+ <body style="background-image: url(images/Geometric3.png);">
 @section('content')
   <div class="introwho3">
   </div>
@@ -32,7 +33,7 @@
   </div>
 </div>
 
-<form action="{{route('home_filtrata')}}" method="GET">
+<form action="{{route('catalogofiltrato')}}" method="GET">
   {{ csrf_field() }}
 <div class="contenitore">    
   <div class="form-group">
@@ -41,29 +42,28 @@
   </div>
 <div class="checkbutton">
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="tipoalloggio" id="inlineRadio1" value="Appartamento">
-    <label class="form-check-label" for="inlineRadio1">appartamento</label>
+    <input class="form-check-input" type="checkbox" name="tipo_alloggio[]" id="Check27" value="appartamento">
+    <label class="form-check-label" for="Check27">Appartamento</label>
   </div>
 
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="tipoalloggio" id="inlineRadio2" value="Stanza singola">
-    <label class="form-check-label" for="inlineRadio2">stanza singola </label>
+        <input class="form-check-input" type="checkbox" name="tipo_alloggio[]" id="Check28" value="stanza_singola">
+        <label class="form-check-label" for="Check28">Stanza singola</label>
   </div>
 
   <div class="form-check form-check-inline">
-    <input class="form-check-input" type="radio" name="tipoalloggio" id="inlineRadio3" value="Stanza doppia">
-    <label class="form-check-label" for="inlineRadio3">stanza doppia</label>
+        <input class="form-check-input" type="checkbox" name="tipo_alloggio[]" id="Check29" value="stanza_doppia">
+        <label class="form-check-label" for="Check29">Stanza doppia</label>
   </div>
 </div>
   <div class="searchbuttoncitta ">
     <button  type="submit" class="btn btn-primary">Cerca</button>
   </div>
 </div>
-</form>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-<form action="{{route('catalogofiltrato')}}" method="GET">
-{{ csrf_field() }}
+
 <div class="vrtc_filter" style="box-shadow: 20px 20px 50px grey; float: right; right: 5%; position: absolute; width: 15%; padding: 2%;">
 <div class="checkbutton">
 <h6>Dimensione</h6>
@@ -157,21 +157,15 @@
 </div>
 <div>
 <br>
-<h6>Posti letto stanza</h6>
-<div class="checkbutton">
-<div class="form-check">
-<input class="form-check-input" type="checkbox" name="posti_letto_stanza[]" id="Check18" value="2">
-<label class="form-check-label" for="Check18">2</label>
-</div>
-</div>
-</div>
-<div>
-<br>
 <h6>Numero Bagni</h6>
 <div class="checkbutton">
 <div class="form-check">
+<input class="form-check-input" type="checkbox" name="numero_bagni[]" id="Check18" value="1" >
+<label class="form-check-label" for="Check18">1</label>
+</div>
+<div class="form-check">
 <input class="form-check-input" type="checkbox" name="numero_bagni[]" id="Check19" value="2" >
-<label class="form-check-label" for="Check19">2</label>
+<label class="form-check-label" for="Check19">2+</label>
 </div>
 </div>
 </div>
@@ -198,13 +192,13 @@
 <div class="checkbutton">
 <div class="form-check">
 <input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check23" value="18" >
-<label class="form-check-label" for="Check23">18</label>
+<label class="form-check-label" for="Check23">18+</label>
 </div><div class="form-check">
 <input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check24" value="25" >
-<label class="form-check-label" for="Check24">25</label>
+<label class="form-check-label" for="Check24">25+</label>
 </div><div class="form-check">
 <input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check25" value="30" >
-<label class="form-check-label" for="Check25">+30</label>
+<label class="form-check-label" for="Check25">30+</label>
 </div>
 </div>
 </div>
@@ -236,7 +230,7 @@
 <div class="col-md-8">
 <div class="card-body">
 <!-- nel titolo andra messo citta, via, numero civico e costo -->
-<a href="{{route('offertalocatario',['id' => $alloggio->ID])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
+<a href="{{route('offerta',['id' => $alloggio->ID])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
 <!-- aggiungere descrizione -->
 <p class="card-text"> {{$alloggio->Descrizione}} </p>
 <p class="card-text"><small class="text-muted">Ultimo aggiornamento: {{$alloggio->updated_at}}</small></p>
@@ -248,5 +242,6 @@
 @endisset
 </div>
 @endsection
+ </body>
 </html>
 

@@ -130,7 +130,6 @@ class LocatarioController extends Controller
         $offerta = $this->_offertaSingola->getAlloggioSelezionato($alloggio);
         return view('offerta')
                 //risulta vuoto
-             ->with('eta', $this->_opziona->eta())
              ->with('opzionateDa', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))
              ->with('offerta', $offerta);
     }
@@ -143,18 +142,33 @@ class LocatarioController extends Controller
     public function showFilteredLocal(Request $request){
         $filtri = $request->all();
         foreach($filtri as $key => $value){
-        if($key != '_token'){
-            foreach($value as $key1 => $value1){
-                   $this->applyFilter($key, $value1);
+       
+            switch($key){
+                case 'citta': {
+                    if($value != ''){
+                        $this->applyFilter('citta', $value);
+                    }
+                }
+                case '_token':break;
+                default: {
+                    foreach($value as $key1 => $value1){
+                        $this->applyFilter($key, $value1);
+                    }
+                }
             }
-          }
+      
         }
         return view('catalogolocatario')
         ->with('alloggi', $this->alloggi_filtrati->collapse()->unique());
      }
+     
 
     private function applyFilter($filtro,$scelta){
     switch($filtro){
+        case 'citta': $this->alloggi_filtrati->push($this->filtri->filtroCitta($scelta));
+            break;
+        case 'tipo_alloggio': $this->alloggi_filtrati->push($this->filtri->filtroTipo($scelta));
+            break;
         case 'posti_letto': $this->alloggi_filtrati->push($this->filtri->filtriPostiTot($scelta));
         break;
         case 'prezzo': $this->alloggi_filtrati->push($this->filtri->filtriPrezzo($scelta));
