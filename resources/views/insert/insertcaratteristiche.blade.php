@@ -116,6 +116,12 @@
                 @endif
     </div>
     @endif
+    @if($alloggio->Tipo == 'Stanza Singola')
+    {{Form::hidden('PostiLettoTot', '1' )}}
+    @endif
+    @if($alloggio->Tipo == 'Stanza Doppia')
+    {{Form::hidden('PostiLettoTot', '2' )}}
+    @endif
     <div  class="wrap-input  rs1-wrap-input">
       {{ Form::submit('Conferma', ['style' => 'background-color: #32aaee; border: 0px; color: white; padding-top: -2%;' , 'class' => 'btn btn-primary btn-lg']) }}
     </div>
