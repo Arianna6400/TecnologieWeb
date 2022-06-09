@@ -94,7 +94,7 @@ class LocatarioController extends Controller
     //mostra l'alloggio opzionato dal locatario
     public function showMiaOpzionata() {
         return view('opzionate')
-            ->with('alloggi_opzionati', $this->_opzionate->opzionatoLocatario(Auth::user()->Username)); 
+            ->with('alloggi_opzionati', $this->_opzionate->opzionatoLocatario(Auth::user()->Username));
     }
 
     //mostralefaq

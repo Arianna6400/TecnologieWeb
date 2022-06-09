@@ -3,15 +3,14 @@
     "",
     "\\app",
     "\\app\\Models",
-    "\\app\\Models\\Resource",
-    "\\database",
-    "\\database\\migrations",
-    "\\database\\seeds",
     "\\public",
+    "\\public\\css",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\auth",
+    "\\resources\\views\\insert",
+    "\\resources\\views\\layouts",
     "\\routes"
   ],
+  "SelectedNode": "\\routes\\web.php",
   "PreviewInSolutionExplorer": false
 }
