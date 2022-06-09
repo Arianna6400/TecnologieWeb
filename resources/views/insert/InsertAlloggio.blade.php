@@ -46,7 +46,7 @@
     </div>
     <div class="form-group form spazio">
         {{ Form::label('NumCivico', 'Numero Civico', ['class' => 'label-input']) }}
-        {{ Form::text('NumCivico', '', ['class' => 'text_label', 'id' => 'NumCivico', 'required']) }}
+        {{ Form::number('NumCivico', '', ['class' => 'text_label', 'id' => 'NumCivico', 'required']) }}
             @if ($errors->first('NumCivico'))
                 <ul class="errors">
                     @foreach ($errors->get('NumCivico') as $message)
@@ -58,7 +58,7 @@
 </div>
     <div class="form-group form ">
         {{ Form::label('Costo', 'Costo', ['class' => 'label-input']) }}
-        {{ Form::text('Costo', '', ['style' => 'width: 100%;' ,'class' => 'text_label', 'id' => 'Costo', 'required']) }}
+        {{ Form::number('Costo', '', ['style' => 'width: 100%;' ,'class' => 'text_label', 'id' => 'Costo', 'required']) }}
             @if ($errors->first('Costo'))
                 <ul class="errors">
                     @foreach ($errors->get('Costo') as $message)
@@ -93,7 +93,7 @@
 </div>
     <div class="form-group form">
         {{ Form::label('Metratura', 'Metratura', ['class' => 'label-input']) }}
-        {{ Form::text('Metratura', '', ['class' => 'text_label', 'id' => 'Metratura', 'required']) }}
+        {{ Form::number('Metratura', '', ['class' => 'text_label', 'id' => 'Metratura', 'required']) }}
             @if ($errors->first('Metratura'))
                 <ul class="errors">
                     @foreach ($errors->get('Metratura') as $message)

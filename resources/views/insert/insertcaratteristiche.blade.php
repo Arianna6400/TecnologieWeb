@@ -94,7 +94,7 @@
     @endif
     <div class="form-group">
         {{ Form::label('EtaMinima', 'Età Minima', ['class' => 'label-input']) }}
-        {{ Form::text('EtaMinima', '', ['class' => 'text_label', 'id' => 'EtaMinima', 'required']) }}
+        {{ Form::number('EtaMinima', '', ['class' => 'text_label', 'id' => 'EtaMinima', 'required']) }}
             @if ($errors->first('EtaMinima'))
                 <ul class="errors">
                     @foreach ($errors->get('EtaMinima') as $message)
