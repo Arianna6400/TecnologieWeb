@@ -32,8 +32,12 @@
   @isset($miei_alloggi)
     @foreach($miei_alloggi as $miei)
       @if($miei->ID == request('id'))
-      <a class="btn btn-outline-success" id="modifica" onclick="modify()" type="button" >Modifica</a>
-      <a class="btn btn-outline-success" id="elimina" type="submit" href="{{route('elimina_alloggio', ['id'=> $miei->ID])}}">Elimina</a>
+        <form onclick="modify()" >
+            <button class="btn btn-outline-success mr-sm-2" style=" background-color: #32aaee; border: 0px; color: white; padding-top: -2%; margin-bottom: 3%;" id="modifica" type="button">Modifica</button>
+        </form>
+        <form action="{{route('elimina_alloggio', ['id'=> $miei->ID])}}">
+            <button class="btn btn-outline-success mr-sm-2" style=" background-color: #32aaee; border: 0px; color: white; padding-top: -2%; margin-bottom: 3%;" id="elimina" type="submit">Elimina</button>
+        </form>
       @endif
     @endforeach
   @endisset
