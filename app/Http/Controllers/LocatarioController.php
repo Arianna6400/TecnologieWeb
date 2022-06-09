@@ -62,7 +62,8 @@ class LocatarioController extends Controller
 
     public function chat(){
         return view('chat')
-            ->with('messaggi', $this->_chat->showChat(Auth::user()->Username));
+        ->with('messaggi_dest', $this->_chat->showChatDest(Auth::user()->Username))
+        ->with('messaggi_mitt', $this->_chat->showChatMitt(Auth::user()->Username));
     }
     
     public function newMessage(NewMessageRequest $request){
@@ -122,16 +123,15 @@ class LocatarioController extends Controller
     }
 
     //mostra l'alloggio che viene selezionato cliccando il titolo
-    public function showOfferta($id){
+    public function showOfferta($id)
+    {
         $alloggio = $this->_offertaSingola->findAlloggioID($id);
         //offerta è un elemento singolo
         $offerta = $this->_offertaSingola->getAlloggioSelezionato($alloggio);
-        echo $offerta->ID;
-        $verifica = $this->_opziona->puo_opzionare($offerta->ID, Auth::user()->Username);
         return view('offerta')
-             ->with('opzionateDa', $this->_opzionate->opzionate(Auth::user()->Username))
-             ->with('offerta', $offerta)
-             ->with('esito', $verifica);
+                //risulta vuoto
+             ->with('opzionateDa', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))
+             ->with('offerta', $offerta);
     }
     
     public function showAllLocal(){
