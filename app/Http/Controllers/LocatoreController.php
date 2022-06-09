@@ -210,28 +210,5 @@ class LocatoreController extends Controller
               ->with('utenteinteressato', $utenteinteressato);
     }
 
-    // permette di modificare un alloggio, i dati necessari per l'inserimento vanno presi con una request
-    public function updateLocal(){
-        
-    }
-    
-    //  permette di modificare il profilo di un locatore, l'id del locatore e i dati da modificare vengono gestiti da una request
-    public function updateProfile(){
-        
-    }
-    
-    // permette di visualizzare la scheda tecnica di una alloggio, l'id dell'alloggio viene preso tramite una request
-    public function showLocalCard(){
-        
-    }
-    
-    // permette di mostrare tutte le richieste per ogni alloggio, a questo metodo vanno passati l'id del locatore e l'id del' alloggio
-    public function showLocalRequest(){
-        
-    }
-
-    // permette di inviare un messaggio, va passato l'id del mittente e l'id del destinatario
-    public function sendMessage(){
-        
-    }
+   
 }

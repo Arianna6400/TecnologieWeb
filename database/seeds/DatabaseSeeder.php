@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
 
         DB::table('alloggio')->insert([
             ['Citta' => 'Ancona', 'Via' => 'Brecce Bianche', 'NumCivico' => '16', 'Costo' => 300, 'PeriodoInizio' => date("2022-05-05"),
-             'PeriodoFine' => date("2022-07-08"), 'Metratura' => 500, 'NumOpzionate' => 1, 'Disponibilita' => 1,'Descrizione' => "Appartamento in zona tranquilla, a due passi dall'università di Ancona. 
+             'PeriodoFine' => date("2022-07-08"), 'Metratura' => 500, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "Appartamento in zona tranquilla, a due passi dall'università di Ancona. 
                   Consigliato per studenti di Ingegneria, Biologia e Agraria", 'Tipo' => 'Appartamento', 'Foto' => 'app1.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
             ['Citta' => 'Ancona', 'Via' => 'Mazzini', 'NumCivico' => '69', 'Costo' => 150, 'PeriodoInizio' => date("2022-05-05"),
              'PeriodoFine' => date("2022-07-08"), 'Metratura' => 300, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "Posto letto in appartamento nel centro della città",
@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
             ['ID' => 1, 'Ripostiglio' => 0, 'Sala' => 1, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
             'NumBagni' => 1, 'PostiLettoTot' => 3, 'EtaMinima' => 18, 'NumStanzeLetto' => 2],
             ['ID' => 2, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'F', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 1, 'NumeroLocali' => NULL,
-            'NumBagni' => NULL, 'PostiLettoTot' => 2, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
+            'NumBagni' => NULL, 'PostiLettoTot' => 1, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
             ['ID' => 3, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 0, 'NumeroLocali' => NULL,
             'NumBagni' => NULL, 'PostiLettoTot' => 4, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
             ['ID' => 4, 'Ripostiglio' => 1, 'Sala' => 0, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
@@ -80,7 +80,6 @@ class DatabaseSeeder extends Seeder
             ['Username' => 'marco', 'ID' => 2],
             ['Username' => 'marco', 'ID' => 3],
             ['Username' => 'lorelore', 'ID' => 4],
-            ['Username' => 'arianna', 'ID' => 1],
         ]);
         
         DB::table('messaggio')->insert([
