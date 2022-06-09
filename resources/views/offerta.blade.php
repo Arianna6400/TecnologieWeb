@@ -46,13 +46,21 @@
             @auth
                 @if(auth()->user()->role== 'Locatario')
                     @if($offerta->Disponibilita != 0)
-                        @empty($opzionateDa)
-                                @csrf
-                                    {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
-                                    {{ Form::text('Username', Auth()->user()->Username, ['class' => 'input', 'id' => 'User' , 'required', 'hidden']) }}
-                                    {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
-                                    {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
-                        @endempty
+                        @if($offerta->SessoRichiesto == Auth()->user()->Sesso)
+                            @if($offerta->EtaMinima < $eta)
+                                @empty($opzionateDa)
+                                        @csrf
+                                            {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
+                                            {{ Form::text('Username', Auth()->user()->Username, ['class' => 'input', 'id' => 'User' , 'required', 'hidden']) }}
+                                            {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
+                                            {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
+                                @endempty
+                            @else
+                            <p>La tua età è minore di quella richiesta, non puoi opzionare.</p>
+                            @endif
+                        @else
+                        <p>Questo alloggio vuole solo persone di sesso: {{$offerta->SessoRichiesto}}, non puoi opzionare</p>
+                        @endif
                         @isset($opzionateDa)
                             <p>Non puoi opzionare perchè hai già opzionato un alloggio</p>
                         @endisset

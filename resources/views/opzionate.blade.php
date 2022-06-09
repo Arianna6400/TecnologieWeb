@@ -30,9 +30,11 @@
                 <div class="col-md-8">
                   <div class="card-body">
                       <!-- nel titolo andra messo citta, via, numero civico e costo -->
-
-                      <a href="{{route('offerta',['id' => $alloggio->ID ])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
-
+                    @if(Auth::user()->role == 'Locatario')    
+                        <a href="{{route('offertalocatario',['id' => $alloggio->ID ])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
+                    @else
+                        <a href="{{route('offerta',['id' => $alloggio->ID ])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
+                    @endif
                     <!-- aggiungere descrizione -->
                     <p class="card-text"> {{$alloggio->Descrizione}} </p>
                     <p class="card-text"><small class="text-muted">Ultimo aggiornamento: {{$alloggio->updated_at}}</small></p>

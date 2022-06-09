@@ -79,6 +79,19 @@ class LocatoreController extends Controller
         return redirect('/locatore/chat');
     }
     
+    //usato dal tasto contatta
+    public function nuovaFormMessaggio($IdAlloggio,$usernameDest){
+        echo $IdAlloggio;
+        echo $usernameDest;
+        date_default_timezone_set("Europe/Rome");
+        return view('insert/insertMessage')
+        ->with('usernameLoggato', Auth::user()->Username)
+        ->with('destinatario', $usernameDest)
+        ->with('alloggio', $IdAlloggio)
+        ->with('data', date("Y/m/d"))
+        ->with('orario', date("H:i"));
+    }
+    
     public function formMessaggio($IdMessaggio, $IdAlloggio){
         date_default_timezone_set("Europe/Rome");
         return view('insert/insertMessage')
@@ -207,7 +220,8 @@ class LocatoreController extends Controller
     public function showInteressato($username){
         $utenteinteressato = $this->_opzionate->showInteressato($username);
         return view('utenteinteressato')
-              ->with('utenteinteressato', $utenteinteressato);
+              ->with('utenteinteressato', $utenteinteressato)
+              ->with('idAlloggio', Interazione::where('Username', $utenteinteressato->Username)->first());
     }
 
    

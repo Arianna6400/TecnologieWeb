@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use DateTime;
 
 class Utenti extends Authenticatable {
     protected $table ='Utenti';
@@ -31,5 +32,4 @@ class Utenti extends Authenticatable {
          $tipo = (array)$tipo;
          return in_array($this->Tipo, $tipo);
      }
-
 }

@@ -17,9 +17,10 @@
   @section('content')
    <h2 class="titolo">Profilo utente</h2>
   @isset($utenteinteressato)
+  @isset($idAlloggio)
   @csrf
  <div class= "contenitore" style="margin-bottom: 100px;">
-      <a class="btn btn-primary btn-lg" style= "background-color: #32aaee; border: 0px; color: white; padding-top: -2%;" type="submit" href="{{route('chatlocatore')}}">Contatta</a>
+      <a class="btn btn-primary btn-lg" style= "background-color: #32aaee; border: 0px; color: white; padding-top: -2%;" type="submit" href="{{route('nuovomessaggioLocatorePerOpzionato', [$idAlloggio, $utenteinteressato->Username])}}">Contatta</a>
       <hr>
       <div class="cont">
         <h4>Informazioni anagrafiche di {{$utenteinteressato->Username}} :</h4>
@@ -42,7 +43,14 @@
       </div>
 
  </div>
+  @endisset
  @endisset
+ @empty($utenteinteressato)
+ <p>Manca utente</p>
+ @endempty
+ @empty($idAlloggio)
+ <p>Manca alloggio</p>
+ @endempty
 
   @endsection
   </html>
