@@ -60,68 +60,81 @@
   </div>
 </div>
 </form>
-<!-- filtri orizzonatali -->
-<div class="orznt-fltr">
-<!-- primo filtro -->
-<div class="dropdown" style="display: inline-block;">
-<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
-Dimensione
-</button>
-<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-<li><a class="dropdown-item" href="#">Da 50mq a 100mq</a></li>
-<li><a class="dropdown-item" href="#">Da 101mq a 200mq</a></li>
-<li><a class="dropdown-item" href="#">Da 201 a 300mq </a></li>
-</ul>
-</div>
-<!-- secondo filtro -->
-<div class="dropdown" style="display: inline-block;">
-<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-Fascia di Prezzo
-</button>
-<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-<li><a class="dropdown-item" href="#">Da 200€ a 300€</a></li>
-<li><a class="dropdown-item" href="#">Da 301€ a 400€</a></li>
-<li><a class="dropdown-item" href="#">Da 401€ a 500€</a></li>
-</ul>
-</div>
-<!-- terzo filtro -->
-<div class="dropdown" style="display: inline-block;">
-<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-Posti letto totali
-</button>
-<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-<li><a class="dropdown-item" href="#">1</a></li>
-<li><a class="dropdown-item" href="#">2</a></li>
-<li><a class="dropdown-item" href="#">3</a></li>
-<li><a class="dropdown-item" href="#">4</a></li>
-</ul>
-</div>
-</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <form action="{{route('catalogofiltrato')}}" method="GET">
 {{ csrf_field() }}
 <div class="vrtc_filter" style="box-shadow: 20px 20px 50px grey; float: right; right: 5%; position: absolute; width: 15%; padding: 2%;">
 <div class="checkbutton">
+<h6>Dimensione</h6>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="dimensione[]" id="Check0" value="metratura_1">
+<label class="form-check-label" for="Check0">50mq-100mq</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="dimensione[]" id="Check1" value="metratura_2">
+<label class="form-check-label" for="Check1">101mq-200mq</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="dimensione[]" id="Check2" value="metratura_3">
+<label class="form-check-label" for="Check2">+201mq</label>
+</div>
+</div>
+    <div class="checkbutton">
+<h6>Fascia prezzo</h6>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="prezzo[]" id="Check3" value="prezzo_1">
+<label class="form-check-label" for="Check3">200€-300€</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="prezzo[]" id="Check4" value="prezzo_2">
+<label class="form-check-label" for="Check4">301€-400€</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="prezzo[]" id="Check5" value="prezzo_3">
+<label class="form-check-label" for="Check5">+401€</label>
+</div>
+</div>
+<div class="checkbutton">
+<h6>Posti letto totali</h6>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="posti_letto[]" id="Check6" value="postiletto_1">
+<label class="form-check-label" for="Check6">1</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="posti_letto[]" id="Check7" value="postiletto_2">
+<label class="form-check-label" for="Check7">2</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="posti_letto[]" id="Check8" value="postiletto_3">
+<label class="form-check-label" for="Check8">3</label>
+</div>
+<div class="form-check">
+<input class="form-check-input" type="checkbox" name="posti_letto[]" id="Check9" value="postiletto_4">
+<label class="form-check-label" for="Check9">4</label>
+</div>
+</div>
+<div class="checkbutton">
 <h6>Servizi Aggiuntivi</h6>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check3" value="sala">
-<label class="form-check-label" for="Check3">Sala</label>
+<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check10" value="sala">
+<label class="form-check-label" for="Check10">Sala</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check4" value="ripostiglio">
-<label class="form-check-label" for="Check4">Ripostiglio</label>
+<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check11" value="ripostiglio">
+<label class="form-check-label" for="Check11">Ripostiglio</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check5" value="garage">
-<label class="form-check-label" for="Check5">Garage</label>
+<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check12" value="garage">
+<label class="form-check-label" for="Check12">Garage</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check6" value="wifi">
-<label class="form-check-label" for="Check6">Wi-fi</label>
+<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check13" value="wifi">
+<label class="form-check-label" for="Check13">Wi-fi</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check7" value="angolo_studio">
-<label class="form-check-label" for="Check7">Angolo studio</label>
+<input class="form-check-input" type="checkbox" name="servizi_aggiuntivi[]" id="Check14" value="angolo_studio">
+<label class="form-check-label" for="Check14">Angolo studio</label>
 </div>
 </div>
 <div>
@@ -129,16 +142,16 @@ Posti letto totali
 <h6>Numero Locali</h6>
 <div class="checkbutton">
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_locali[]" id="Check8" value="2">
-<label class="form-check-label" for="Check8">2</label>
+<input class="form-check-input" type="checkbox" name="numero_locali[]" id="Check15" value="2">
+<label class="form-check-label" for="Check15">2</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_locali[]" id="Check9" value="3">
-<label class="form-check-label" for="Check9">3</label>
+<input class="form-check-input" type="checkbox" name="numero_locali[]" id="Check16" value="3">
+<label class="form-check-label" for="Check16">3</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_locali[]" id="Check10" value="+3">
-<label class="form-check-label" for="Check10">+3</label>
+<input class="form-check-input" type="checkbox" name="numero_locali[]" id="Check17" value="+3">
+<label class="form-check-label" for="Check17">+3</label>
 </div>
 </div>
 </div>
@@ -147,8 +160,8 @@ Posti letto totali
 <h6>Posti letto stanza</h6>
 <div class="checkbutton">
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="posti_letto_stanza[]" id="Check11" value="2">
-<label class="form-check-label" for="Check11">2</label>
+<input class="form-check-input" type="checkbox" name="posti_letto_stanza[]" id="Check18" value="2">
+<label class="form-check-label" for="Check18">2</label>
 </div>
 </div>
 </div>
@@ -157,8 +170,8 @@ Posti letto totali
 <h6>Numero Bagni</h6>
 <div class="checkbutton">
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_bagni[]" id="Check14" value="2" >
-<label class="form-check-label" for="Check14">2</label>
+<input class="form-check-input" type="checkbox" name="numero_bagni[]" id="Check19" value="2" >
+<label class="form-check-label" for="Check19">2</label>
 </div>
 </div>
 </div>
@@ -167,15 +180,15 @@ Posti letto totali
 <h6>Numero stanze letto</h6>
 <div class="checkbutton">
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_stanze_letto[]" id="Check17" value="2" >
-<label class="form-check-label" for="Check17">2</label>
+<input class="form-check-input" type="checkbox" name="numero_stanze_letto[]" id="Check20" value="2" >
+<label class="form-check-label" for="Check20">2</label>
 </div>
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_stanze_letto[]" id="Check18" value="3" >
-<label class="form-check-label" for="Check18">3</label>
+<input class="form-check-input" type="checkbox" name="numero_stanze_letto[]" id="Check21" value="3" >
+<label class="form-check-label" for="Check21">3</label>
 </div><div class="form-check">
-<input class="form-check-input" type="checkbox" name="numero_stanze_letto[]" id="Check19" value="+3" >
-<label class="form-check-label" for="Check19">+3</label>
+<input class="form-check-input" type="checkbox" name="numero_stanze_letto[]" id="Check22" value="+3" >
+<label class="form-check-label" for="Check22">+3</label>
 </div>
 </div>
 </div>
@@ -184,14 +197,14 @@ Posti letto totali
 <h6>Età minima</h6>
 <div class="checkbutton">
 <div class="form-check">
-<input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check20" value="18" >
-<label class="form-check-label" for="Check20">18</label>
+<input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check23" value="18" >
+<label class="form-check-label" for="Check23">18</label>
 </div><div class="form-check">
-<input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check20" value="25" >
-<label class="form-check-label" for="Check20">25</label>
+<input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check24" value="25" >
+<label class="form-check-label" for="Check24">25</label>
 </div><div class="form-check">
-<input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check21" value="30" >
-<label class="form-check-label" for="Check21">+30</label>
+<input class="form-check-input" type="checkbox" name="eta_minima[]" id="Check25" value="30" >
+<label class="form-check-label" for="Check25">+30</label>
 </div>
 </div>
 </div>
@@ -199,11 +212,11 @@ Posti letto totali
 <h6>Sesso richiesto</h6>
 <div class="checkbutton">
 <div class="form-check">
-<input class="form-check-input" type="radio" name="sesso_richiesto[]" id="Check22" value="M" >
-<label class="form-check-label" for="Check22">Maschio</label>
+<input class="form-check-input" type="radio" name="sesso_richiesto[]" id="Check26" value="M" >
+<label class="form-check-label" for="Check26">Maschio</label>
 </div><div class="form-check">
-<input class="form-check-input" type="radio" name="sesso_richiesto[]" id="Check22" value="F" >
-<label class="form-check-label" for="Check22">Femmina</label>
+<input class="form-check-input" type="radio" name="sesso_richiesto[]" id="Check26" value="F" >
+<label class="form-check-label" for="Check26">Femmina</label>
 </div>
 </div>
 </div>
@@ -223,7 +236,7 @@ Posti letto totali
 <div class="col-md-8">
 <div class="card-body">
 <!-- nel titolo andra messo citta, via, numero civico e costo -->
-<a href="{{route('offertalocatario',['id' => $alloggio->ID])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
+<a href="{{route('offerta',['id' => $alloggio->ID])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
 <!-- aggiungere descrizione -->
 <p class="card-text"> {{$alloggio->Descrizione}} </p>
 <p class="card-text"><small class="text-muted">Ultimo aggiornamento: {{$alloggio->updated_at}}</small></p>

@@ -153,23 +153,29 @@ class LocatarioController extends Controller
      }
 
     private function applyFilter($filtro,$scelta){
-        switch($filtro){
+    switch($filtro){
+        case 'posti_letto': $this->alloggi_filtrati->push($this->filtri->filtriPostiTot($scelta));
+        break;
+        case 'prezzo': $this->alloggi_filtrati->push($this->filtri->filtriPrezzo($scelta));
+        break;
+        case 'dimensione': $this->alloggi_filtrati->push($this->filtri->filtriDimensione($scelta));
+        break;
         case 'servizi_aggiuntivi': $this->alloggi_filtrati->push($this->filtri->filtroserviziAggiuntivi($scelta));
-                                   break;
+        break;
         case 'numero_locali': $this->alloggi_filtrati->push($this->filtri->filtroNumeroLocali($scelta));
-                              break;
+        break;
         case 'posti_letto_stanza': $this->alloggi_filtrati->push($this->filtri->filtropostiLettoStanza($scelta));
-                                   break;
+        break;
         case 'numero_bagni': $this->alloggi_filtrati->push($this->filtri->filtroNumeroBagni($scelta));
-                             break;
+        break;
         case 'numero_stanze_letto': $this->alloggi_filtrati->push($this->filtri->filtronumeroStanze($scelta));
-                                    break;
+        break;
         case 'eta_minima': $this->alloggi_filtrati->push($this->filtri->filtroEtaMinima($scelta));
-                           break;
+        break;
         case 'sesso_richiesto': $this->alloggi_filtrati->push($this->filtri->filtroSessoRischiesto($scelta));
-                                break;
+        break;
     }
-}
+    }
 
     //permette di aprire il profilo utente
     public function showProfile(){
