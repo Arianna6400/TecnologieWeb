@@ -81,8 +81,6 @@ class LocatoreController extends Controller
     
     //usato dal tasto contatta
     public function nuovaFormMessaggio($IdAlloggio,$usernameDest){
-        echo $IdAlloggio;
-        echo $usernameDest;
         date_default_timezone_set("Europe/Rome");
         return view('insert/insertMessage')
         ->with('usernameLoggato', Auth::user()->Username)
