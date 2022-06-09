@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\app",
-    "\\app\\Models",
+    "\\database",
+    "\\database\\seeds",
     "\\public",
     "\\public\\css",
     "\\resources",
