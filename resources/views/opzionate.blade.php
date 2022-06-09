@@ -59,6 +59,9 @@
                     <p>Alloggio pieno: <button style="background-color: red; height: 20px; width:20px; border-radius: 100px;"></button></p>
                     @endif
                     </div>
+                    @if(Auth::user()->role == 'Locatario')
+                    <a href="{{route('nuovomessaggioLocatarioPerOpzionato',[$alloggio->ID, $proprietario->Username])}}" class="card-title">Contatta il proprietario</a>
+                    @endif
                     
                   </div>
                 </div>

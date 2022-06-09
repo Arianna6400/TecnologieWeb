@@ -1,5 +1,5 @@
-[11:28] CICCOLINI JOSHUA
-@extends('layouts.public')@section('title', 'Nuovo messaggio')<!doctype html>
+@extends('layouts.public')
+@section('title', 'Nuovo messaggio')<!doctype html>
 <html lang="en">
 <head>
 <!-- Required meta tags -->

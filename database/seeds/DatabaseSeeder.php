@@ -14,6 +14,13 @@ class DatabaseSeeder extends Seeder
          DB::table('faq')->insert([
             ['Domanda' => 'Posso contattare direttamente il proprietario attraverso il sito?', 'Risposta' => 'Sì, è possibile attraverso il servizio di messaggistica interno al sito'],
             ['Domanda' => 'Quante case si possono opzionare?', 'Risposta' => 'In seguito alla selezione attraverso il filtraggio, si potrà effettivamente opzionare un solo alloggio'],
+            ['Domanda' => 'Da locatore, in che modalità posso contattare il locatario che ha opzionato una delle mie offerte?', 'Risposta' => 'Nell apposita sezione dedicata alla
+            visualizzazione degli utenti che hanno opzionato un suo alloggio, sarà possibile visualizzare l utente interessato ed interagire con esso attraverso la sezione di messaggistica'],
+            ['Domanda' => 'Posso modificare un alloggio inserito nel caso in cui io voglia cambiare alcune caratteristiche?', 'Risposta' =>'Sì, è possibile selezionando la sezione relativa alle
+            offerte inserite, e selezionando uno degli alloggi da lei inserito, potrà decidere se modificarne le caratteristiche o cancellarlo definitivamente'],
+            ['Domanda' => 'Quanti alloggi posso inserire?', 'Risposta' => 'Non ci sono limitazioni, può inserire quante offerte preferisce'],
+            ['Domanda' => 'Posso filtrare gli alloggi in modo da riscontrare le caratteristiche che più mi piacciono?', 'Risposta' => 'Nella sezione di filtraggio del catalogo
+            sono presenti numerosi filtri da poter inserire, quindi è possibile venire incontro alle proprie esigenze e trovare la locazione ideale'],
         ]);
 
         DB::table('alloggio')->insert([
@@ -31,20 +38,20 @@ class DatabaseSeeder extends Seeder
              'Tipo' => 'Appartamento', 'Foto' => 'app4.jpeg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
              ['Citta' => 'Torino', 'Via' => 'Roma', 'NumCivico' => '12', 'Costo' => 210, 'PeriodoInizio' => date("2022-06-06"),
              'PeriodoFine' => date("2022-08-08"), 'Metratura' => 100, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "stanza singola in centro ben collegata",
-             'Tipo' => 'Stanza singola', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             'Tipo' => 'Stanza singola', 'Foto' => 'app5.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
              ['Citta' => 'Napoli', 'Via' => 'brombeis', 'NumCivico' => '32', 'Costo' => 110, 'PeriodoInizio' => date("2022-06-12"),
              'PeriodoFine' => date("2022-11-08"), 'Metratura' => 110, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "stanza doppia in periferia ben collegata",
-             'Tipo' => 'Stanza doppia', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             'Tipo' => 'Stanza doppia', 'Foto' => 'app6.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
              ['Citta' => 'Pescara', 'Via' => 'torrente piomba', 'NumCivico' => '12', 'Costo' => 260, 'PeriodoInizio' => date("2022-06-06"),
-             'PeriodoFine' => date("2022-10-08"), 'Metratura' => 110, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "appartamento vicino al mare",
-             'Tipo' => 'Appartamento', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             'PeriodoFine' => date("2022-10-08"), 'Metratura' => 200, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "appartamento vicino al mare",
+             'Tipo' => 'Appartamento', 'Foto' => 'app7.jpeg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
         ]);
 
         DB::table('caratteristiche')->insert([
             ['ID' => 1, 'Ripostiglio' => 0, 'Sala' => 1, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
-            'NumBagni' => 1, 'PostiLettoTot' => 3, 'EtaMinima' => 18, 'NumStanzeLetto' => 2],
+            'NumBagni' => 1, 'PostiLettoTot' => 3, 'EtaMinima' => 19, 'NumStanzeLetto' => 2],
             ['ID' => 2, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'F', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 1, 'NumeroLocali' => NULL,
-            'NumBagni' => NULL, 'PostiLettoTot' => 2, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
+            'NumBagni' => NULL, 'PostiLettoTot' => 2, 'EtaMinima' => 23, 'NumStanzeLetto' => NULL],
             ['ID' => 3, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 0, 'NumeroLocali' => NULL,
             'NumBagni' => NULL, 'PostiLettoTot' => 4, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
             ['ID' => 4, 'Ripostiglio' => 1, 'Sala' => 0, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
@@ -80,6 +87,9 @@ class DatabaseSeeder extends Seeder
             ['Username' => 'marco', 'ID' => 2],
             ['Username' => 'marco', 'ID' => 3],
             ['Username' => 'lorelore', 'ID' => 4],
+            ['Username' => 'lorelore', 'ID' => 5],
+            ['Username' => 'lorelore', 'ID' => 6],
+            ['Username' => 'lorelore', 'ID' => 7],
         ]);
         
         DB::table('messaggio')->insert([

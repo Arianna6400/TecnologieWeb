@@ -3,16 +3,15 @@
 namespace App\Models;
 use App\Models\Resource\Messaggio;
 use App\Models\Resource\Alloggio;
-use App\Models\Resource\Riferimento;
 
 class Chat
 {
     public function showChatDest($username){
-        return Messaggio::where('Destinatario', $username)->orderBy('Data','desc')->orderBy('Orario','desc')->get();
+        return Messaggio::where('Destinatario', $username)->orderBy('Data','desc')->orderBy('Orario','asc')->get();
     }
 
     public function showChatMitt($username){
-        return Messaggio::Where('Mittente', $username)->orderBy('Data','desc')->orderBy('Orario','desc')->get();
+        return Messaggio::Where('Mittente', $username)->orderBy('Data','desc')->orderBy('Orario','asc')->get();
     }
     
     public function destinatarioByIdMessaggio($id){

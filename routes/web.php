@@ -108,6 +108,8 @@ Route::post('locatario/haiOpzionato/{id}', 'LocatarioController@Opziona')->name(
 
 Route::get('locatario/insertmessage/{IdMessaggio}/alloggio/{IdAlloggio}', 'LocatarioController@formMessaggio')->name('nuovomessaggio');
 
+Route::get('locatario/insertmessageNuovo/alloggio/{IdAlloggio}/destinatario/{username}', 'LocatarioController@nuovaFormMessaggio')->name('nuovomessaggioLocatarioPerOpzionato');
+
 //Rotte utente admin
 
 Route::get('/admin', 'AdminController@index')->name('admin');

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
 use App\Utenti;
+use App\Models\MieOfferte;
 use App\Models\Resource\Alloggio;
 use App\Models\Resource\Messaggio;
 use App\Models\Resource\Caratteristiche;
@@ -30,6 +31,7 @@ class LocatarioController extends Controller
     protected $_faqModel;
     protected $alloggi_filtrati;
     protected $filtri;
+    protected $_mieOfferte;
 
     public function __construct() {
         $this->middleware('can:isLocatario');
@@ -44,11 +46,10 @@ class LocatarioController extends Controller
         $this->_chat = new Chat;
         $this->alloggi_filtrati = collect([]);
         $this->_caratteristiche = new Caratteristiche;
+        $this->_mieOfferte = new MieOfferte();
     }
 
     public function Opziona($idAlloggio){
-        echo $this->_opzionate->opzionatoLocatario(Auth::user()->Username);
-        echo $this->_opziona->opziona($idAlloggio, Auth::user()->Username);
         //nella view dobbiamo vedere cosa c'è dentro esito, perchè dalla funzione opziona, 
         //se ritorno true ho potuto fare l'inserimento, se ritorno false, o l'alloggio è pieno o ho già opzionato altro --> nella view 
         //se dentro esito c'è false non devo far vedere il tasto opziona
@@ -80,6 +81,17 @@ class LocatarioController extends Controller
         return redirect('/locatario/chat');
     }
     
+    //da opzionate contatta proprietario
+    public function nuovaFormMessaggio($IdAlloggio,$usernameDest){
+        date_default_timezone_set("Europe/Rome");
+        return view('insert/insertMessage')
+        ->with('usernameLoggato', Auth::user()->Username)
+        ->with('destinatario', $usernameDest)
+        ->with('alloggio', $IdAlloggio)
+        ->with('data', date("Y/m/d"))
+        ->with('orario', date("H:i"));
+    }
+    
     public function formMessaggio($IdMessaggio, $IdAlloggio){
         date_default_timezone_set("Europe/Rome");
         return view('insert/insertMessage')
@@ -93,9 +105,18 @@ class LocatarioController extends Controller
     
     //mostra l'alloggio opzionato dal locatario
     public function showMiaOpzionata() {
-        return view('opzionate')
-            ->with('alloggi_opzionati', $this->_opzionate->opzionatoLocatario(Auth::user()->Username));
+        if ($this->_opzionate->opzionatoLocatario(Auth::user()->Username) != null){
+            $alloggio_opzionato =  $this->_opzionate->opzionatoLocatario(Auth::user()->Username)->first();
+            return view('opzionate')
+                ->with('alloggi_opzionati', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))
+                ->with('proprietario', $this->_mieOfferte->proprietario($alloggio_opzionato->ID));
+        }
+        else{
+            return redirect ('/locatario');
+        }
     }
+    
+    
 
     //mostralefaq
     public function showFaq() {
