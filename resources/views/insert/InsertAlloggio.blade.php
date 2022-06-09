@@ -70,7 +70,7 @@
     <div class="form-row ">
     <div class="form-group form ">
         {{ Form::label('PeriodoInizio', 'Periodo inizio disponibilità', ['class' => 'label-input']) }}
-        {{ Form::date('PeriodoInizio', '', ['class' => 'input', 'id' => 'PeriodoInizio', 'required']) }}
+        {{ Form::date('PeriodoInizio', '', ['class' => 'text_label', 'id' => 'PeriodoInizio', 'required']) }}
             @if ($errors->first('PeriodoInizio'))
                 <ul class="errors">
                     @foreach ($errors->get('PeriodoInizio') as $message)
@@ -133,7 +133,8 @@
                 </ul>
                 @endif
     </div>
-
+    {{ Form::hidden('created_at', date("Y-m-d H:i:s"))}}
+    {{ Form::hidden('updated_at', date("Y-m-d H:i:s"))}}
     <div  class="wrap-input  rs1-wrap-input titolo">
         {{ Form::submit('Avanti', ['style' => 'background-color: #32aaee; border: 0px; color: white; padding-top: -2%;' , 'class' => 'btn btn-primary btn-lg']) }}
     </div>

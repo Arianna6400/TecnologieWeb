@@ -19,7 +19,7 @@
         <a class="nav-link" href="{{route('FAQ')}}">FAQ</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{route('opzionataLocatario')}}">Mie opzioni</a>
+        <a class="nav-link" href="{{route('opzionataLocatario')}}">Mia opzione</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route('chatlocatario')}}">Chat</a>
