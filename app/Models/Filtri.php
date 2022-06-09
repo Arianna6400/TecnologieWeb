@@ -16,8 +16,32 @@ public function filtroPrezzo($max, $min){
 
 public function fitroPostiTotali($numeroPosti){
 // ritorna un array di id di alloggi che anno quelle caratteristiche
-    $id = Caratteristiche::where('PostiLettoTot', '>', $min)->where('PostiLettoTot', '<', $max)->select('ID')->get();
-    return Alloggio::find($id);
+$id = Caratteristiche::where('PostiLettoTot', $numeroPosti)->select('ID')->get();
+return Alloggio::find($id);
+}
+
+public function filtriDimensione($scelta){
+switch ($scelta){
+case 'metratura_1': return $this->filtroDimensione(100,50);
+case 'metrature_2': return $this->filtroDimensione(200, 101);
+case 'metratura_3': return $this->filtroDimensione(1000000, 201);
+}
+}
+public function filtriPrezzo($scelta){
+switch ($scelta){
+case 'prezzo_1': return $this->filtroPrezzo(300,200);
+case 'prezzo_2': return $this->filtroPrezzo(400, 301);
+case 'prezzo_3': return $this->filtroPrezzo(1000000, 401);
+}
+}
+
+public function filtriPostiTot($scelta) {
+switch ($scelta){
+case 'postiletto_1': return $this->fitroPostiTotali(1);
+case 'postiletto_2': return $this->fitroPostiTotali(2);
+case 'postiletto_3': return $this->fitroPostiTotali(3);
+case 'postiletto_4': return $this->fitroPostiTotali(4);
+}
 }
 
 public function filtroserviziAggiuntivi($nomeServizio){

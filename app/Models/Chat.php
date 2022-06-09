@@ -7,8 +7,12 @@ use App\Models\Resource\Riferimento;
 
 class Chat
 {
-    public function showChat($username){
-        return Messaggio::where('Destinatario', $username)->orWhere('Mittente', $username)->orderBy('Data','desc')->orderBy('Orario','desc')->get();
+    public function showChatDest($username){
+        return Messaggio::where('Destinatario', $username)->orderBy('Data','desc')->orderBy('Orario','desc')->get();
+    }
+
+    public function showChatMitt($username){
+        return Messaggio::Where('Mittente', $username)->orderBy('Data','desc')->orderBy('Orario','desc')->get();
     }
     
     public function destinatarioByIdMessaggio($id){

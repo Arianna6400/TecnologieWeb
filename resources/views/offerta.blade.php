@@ -32,8 +32,12 @@
   @isset($miei_alloggi)
     @foreach($miei_alloggi as $miei)
       @if($miei->ID == request('id'))
-      <a class="btn btn-outline-success" id="modifica" onclick="modify()" type="button" >Modifica</a>
-      <a class="btn btn-outline-success" id="elimina" type="submit" href="{{route('elimina_alloggio', ['id'=> $miei->ID])}}">Elimina</a>
+        <form onclick="modify()" >
+            <button class="btn btn-outline-success mr-sm-2" style=" background-color: #32aaee; border: 0px; color: white; padding-top: -2%; margin-bottom: 3%;" id="modifica" type="button">Modifica</button>
+        </form>
+        <form action="{{route('elimina_alloggio', ['id'=> $miei->ID])}}">
+            <button class="btn btn-outline-success mr-sm-2" style=" background-color: #32aaee; border: 0px; color: white; padding-top: -2%; margin-bottom: 3%;" id="elimina" type="submit">Elimina</button>
+        </form>
       @endif
     @endforeach
   @endisset
@@ -41,28 +45,20 @@
     @isset($offerta)
             @auth
                 @if(auth()->user()->role== 'Locatario')
-                    @if($offerta->Disponibilita == 0)
-                        <p>Non puoi opzionare perchè alloggio è pieno</p>
-                    @endif
-                        @isset($esito)
-                        {{$esito->Descrizione}}
-                            @if($esito != '1')
+                    @if($offerta->Disponibilita != 0)
+                        @empty($opzionateDa)
                                 @csrf
                                     {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
                                     {{ Form::text('Username', Auth()->user()->Username, ['class' => 'input', 'id' => 'User' , 'required', 'hidden']) }}
                                     {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
                                     {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
-                            @else
-                                <p>Non puoi opzionare perchè hai già opzionato un alloggio</p>
-                            @endif
-                        @endisset 
-                        @empty($esito)
-                            <p>Empty</p>
-                            {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
-                            {{ Form::text('Username', Auth()->user()->Username, ['class' => 'input', 'id' => 'User' , 'required', 'hidden']) }}
-                            {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
-                            {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
                         @endempty
+                        @isset($opzionateDa)
+                            <p>Non puoi opzionare perchè hai già opzionato un alloggio</p>
+                        @endisset
+                    @else
+                        <p>Non puoi opzionare perchè alloggio è pieno</p>
+                    @endif
                 @endif
             @endauth
             @guest
@@ -99,7 +95,7 @@
         {{ Form::number('Costo', $offerta->Costo, ['class' => 'formall', 'id' => 'Costo']) }}<p class="formall">€</p></li>
 
         <li class= "list-group-item"><h5> Periodo disponibilità: </h5> <p class="label">Dal {{$offerta->PeriodoInizio}} al {{$offerta->PeriodoFine}}</p>
-        Dal {{ Form::date('PeriodoInizio', $offerta->PeriodoInizio, ['class' => 'formall', 'id' => 'inputperinizio']) }} al 
+        <p class="formall">Dal</p> {{ Form::date('PeriodoInizio', $offerta->PeriodoInizio, ['class' => 'formall', 'id' => 'inputperinizio']) }} <p class="formall">al </p>
         {{ Form::date('PeriodoFine', $offerta->PeriodoFine, ['class' => 'formall', 'id' => 'PeriodoFine']) }}</li>
 
         <li class= "list-group-item"><h5> Metratura: </h5> <p class="label">{{$offerta->Metratura}}mq</p>
