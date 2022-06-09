@@ -21,6 +21,4 @@ class MieOfferte
     public function eliminaAlloggioById($id){
         Alloggio::where('ID', $id)->delete();
     }
-// questa funzione va collegata al bottone elimina
 }
-    

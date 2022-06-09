@@ -31,13 +31,13 @@ class DatabaseSeeder extends Seeder
              'Tipo' => 'Appartamento', 'Foto' => 'app4.jpeg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
              ['Citta' => 'Torino', 'Via' => 'Roma', 'NumCivico' => '12', 'Costo' => 210, 'PeriodoInizio' => date("2022-06-06"),
              'PeriodoFine' => date("2022-08-08"), 'Metratura' => 100, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "stanza singola in centro ben collegata",
-             'Tipo' => 'Stanza singola', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             'Tipo' => 'Stanza singola', 'Foto' => 'app5.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
              ['Citta' => 'Napoli', 'Via' => 'brombeis', 'NumCivico' => '32', 'Costo' => 110, 'PeriodoInizio' => date("2022-06-12"),
              'PeriodoFine' => date("2022-11-08"), 'Metratura' => 110, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "stanza doppia in periferia ben collegata",
-             'Tipo' => 'Stanza doppia', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             'Tipo' => 'Stanza doppia', 'Foto' => 'app6.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
              ['Citta' => 'Pescara', 'Via' => 'torrente piomba', 'NumCivico' => '12', 'Costo' => 260, 'PeriodoInizio' => date("2022-06-06"),
              'PeriodoFine' => date("2022-10-08"), 'Metratura' => 110, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "appartamento vicino al mare",
-             'Tipo' => 'Appartamento', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             'Tipo' => 'Appartamento', 'Foto' => 'app7.jpeg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
         ]);
 
         DB::table('caratteristiche')->insert([
@@ -80,6 +80,9 @@ class DatabaseSeeder extends Seeder
             ['Username' => 'marco', 'ID' => 2],
             ['Username' => 'marco', 'ID' => 3],
             ['Username' => 'lorelore', 'ID' => 4],
+            ['Username' => 'lorelore', 'ID' => 5],
+            ['Username' => 'lorelore', 'ID' => 6],
+            ['Username' => 'lorelore', 'ID' => 7],
         ]);
         
         DB::table('messaggio')->insert([
