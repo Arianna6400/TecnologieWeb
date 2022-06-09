@@ -95,7 +95,7 @@
         {{ Form::number('Costo', $offerta->Costo, ['class' => 'formall', 'id' => 'Costo']) }}<p class="formall">€</p></li>
 
         <li class= "list-group-item"><h5> Periodo disponibilità: </h5> <p class="label">Dal {{$offerta->PeriodoInizio}} al {{$offerta->PeriodoFine}}</p>
-        Dal {{ Form::date('PeriodoInizio', $offerta->PeriodoInizio, ['class' => 'formall', 'id' => 'inputperinizio']) }} al 
+        <p class="formall">Dal</p> {{ Form::date('PeriodoInizio', $offerta->PeriodoInizio, ['class' => 'formall', 'id' => 'inputperinizio']) }} <p class="formall">al </p>
         {{ Form::date('PeriodoFine', $offerta->PeriodoFine, ['class' => 'formall', 'id' => 'PeriodoFine']) }}</li>
 
         <li class= "list-group-item"><h5> Metratura: </h5> <p class="label">{{$offerta->Metratura}}mq</p>
