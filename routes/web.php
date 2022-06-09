@@ -63,7 +63,7 @@ Route::get('locatore/mie_offerte', 'LocatoreController@showCatalogoMieOfferte')-
 
 Route::get('locatore/opzionate', 'LocatoreController@showAlloggiOpzionati')->name('opzionate');
 
-Route::view('locatore/utenteinteressato', 'utenteinteressato')->name('viewutente');
+Route::get('locatore/utenteinteressato/{username}', 'LocatoreController@showInteressato')->name('viewutente');
 
 Route::get('locatore/elimina_alloggio/{id}', 'LocatoreController@deleteLocal')->name('elimina_alloggio');
 

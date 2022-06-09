@@ -72,6 +72,11 @@ class Opzionate
             return Alloggio::where('ID', $id->ID)->get();
     }
 
+    public function showInteressato($username){
+        return Utenti::where('utenti.Username', $username)->where('utenti.role', '=', 'Locatario')
+               ->join('interazione', 'interazione.Username', '=', 'utenti.Username')->first();
+    }
+
     //per le stats dell'admin, ritorna gli alloggi totali opzionati
     public function getOpzionate($tipo, $inizio, $fine){
         if($tipo == 'Tutti') {
@@ -99,6 +104,7 @@ class Opzionate
         }
         return $alloggi_locati;
     }
+
 }
 
 

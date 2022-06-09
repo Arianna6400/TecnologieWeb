@@ -203,6 +203,12 @@ class LocatoreController extends Controller
         return response()->json(['ciao' => 'ciao']);
     }
 
+    public function showInteressato($username){
+        $utenteinteressato = $this->_opzionate->showInteressato($username);
+        return view('utenteinteressato')
+              ->with('utenteinteressato', $utenteinteressato);
+    }
+
     // permette di modificare un alloggio, i dati necessari per l'inserimento vanno presi con una request
     public function updateLocal(){
         

@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Models",
+    "\\app\\Models\\Resource",
+    "\\database",
+    "\\database\\migrations",
     "\\public",
-    "\\public\\css",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\edit",
-    "\\resources\\views\\helpers",
-    "\\resources\\views\\insert",
-    "\\resources\\views\\pagination",
+    "\\resources\\views\\auth",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\insert\\insertFAQ.blade.php",
+  "SelectedNode": "\\resources\\views\\offerta.blade.php",
   "PreviewInSolutionExplorer": false
 }
