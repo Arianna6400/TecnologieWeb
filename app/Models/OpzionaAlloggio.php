@@ -32,7 +32,7 @@ public function opziona($idAlloggio, $usenameLocatario){
 
 public function eta(){
          $eta = date_diff(Auth()->user()->DataNascita, date_create(date('Y/m/d', time())));
-         return $eta->format('%y');
+         return $eta->format('%Y');
      }
 
 }

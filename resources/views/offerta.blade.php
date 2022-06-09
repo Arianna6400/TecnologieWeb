@@ -47,7 +47,7 @@
                 @if(auth()->user()->role== 'Locatario')
                     @if($offerta->Disponibilita != 0)
                         @if($offerta->SessoRichiesto == Auth()->user()->Sesso)
-                            @if($offerta->EtaMinima < $eta)
+                            @if($eta >= $offerta->EtaMinima)
                                 @empty($opzionateDa)
                                         @csrf
                                             {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
@@ -55,9 +55,9 @@
                                             {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
                                             {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
                                 @endempty
-                            @else
-                            <p>La tua età è minore di quella richiesta, non puoi opzionare.</p>
-                            @endif
+                        @else
+                        <p>Non hai età richiesta</p>
+                        @endif
                         @else
                         <p>Questo alloggio vuole solo persone di sesso: {{$offerta->SessoRichiesto}}, non puoi opzionare</p>
                         @endif

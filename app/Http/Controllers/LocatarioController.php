@@ -147,11 +147,12 @@ class LocatarioController extends Controller
     //mostra l'alloggio che viene selezionato cliccando il titolo
     public function showOfferta($id)
     {
+        $eta = $this->_opziona->eta();
         $alloggio = $this->_offertaSingola->findAlloggioID($id);
         //offerta è un elemento singolo
         $offerta = $this->_offertaSingola->getAlloggioSelezionato($alloggio);
         return view('offerta')
-                //risulta vuoto
+             ->with('eta', $this->_opziona->eta())
              ->with('opzionateDa', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))
              ->with('offerta', $offerta);
     }
