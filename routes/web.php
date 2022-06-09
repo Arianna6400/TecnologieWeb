@@ -77,6 +77,8 @@ Route::post('locatore/addmessage', 'LocatoreController@newMessage')->name('addme
 
 Route::get('locatore/insertmessage/{IdMessaggio}/alloggio/{IdAlloggio}', 'LocatoreController@formMessaggio')->name('nuovomessaggioLocatore');
 
+Route::get('locatore/insertmessageNuovo/alloggio/{IdAlloggio}/destinatario/{username}', 'LocatoreController@nuovaFormMessaggio')->name('nuovomessaggioLocatorePerOpzionato');
+
 Route::get('locatore/visualizzaprofilo', 'LocatoreController@showProfile')->name('visualizzaprofilolocatore');
 
 Route::post('submit','LocatoreController@save2')->name('submit');
