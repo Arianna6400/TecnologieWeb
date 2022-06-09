@@ -50,8 +50,6 @@ class LocatarioController extends Controller
     }
 
     public function Opziona($idAlloggio){
-        echo $this->_opzionate->opzionatoLocatario(Auth::user()->Username);
-        echo $this->_opziona->opziona($idAlloggio, Auth::user()->Username);
         //nella view dobbiamo vedere cosa c'è dentro esito, perchè dalla funzione opziona, 
         //se ritorno true ho potuto fare l'inserimento, se ritorno false, o l'alloggio è pieno o ho già opzionato altro --> nella view 
         //se dentro esito c'è false non devo far vedere il tasto opziona
@@ -85,8 +83,6 @@ class LocatarioController extends Controller
     
     //da opzionate contatta proprietario
     public function nuovaFormMessaggio($IdAlloggio,$usernameDest){
-        echo $IdAlloggio;
-        echo $usernameDest;
         date_default_timezone_set("Europe/Rome");
         return view('insert/insertMessage')
         ->with('usernameLoggato', Auth::user()->Username)

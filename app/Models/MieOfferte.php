@@ -22,5 +22,10 @@ class MieOfferte
     public function eliminaAlloggioById($id){
         Alloggio::where('ID', $id)->delete();
     }
-// questa funzione va collegata al bottone elimina
+
+     public function proprietario($idAlloggio){
+        return Utenti::where('utenti.role','=', 'Locatore')
+               ->join('interazione', 'interazione.Username', '=', 'utenti.Username')->first();
+
+    }
 }
