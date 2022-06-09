@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Utenti;
 use App\Models\Resource\Interazione;
 use App\Models\Resource\Alloggio;
 
@@ -21,4 +22,5 @@ class MieOfferte
     public function eliminaAlloggioById($id){
         Alloggio::where('ID', $id)->delete();
     }
+// questa funzione va collegata al bottone elimina
 }
