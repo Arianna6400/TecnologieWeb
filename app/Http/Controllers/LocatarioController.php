@@ -130,6 +130,7 @@ class LocatarioController extends Controller
         $offerta = $this->_offertaSingola->getAlloggioSelezionato($alloggio);
         return view('offerta')
                 //risulta vuoto
+             ->with('eta', $this->_opziona->eta())
              ->with('opzionateDa', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))
              ->with('offerta', $offerta);
     }

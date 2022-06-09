@@ -29,4 +29,10 @@ public function opziona($idAlloggio, $usenameLocatario){
         $non_puo = "No";
         return $non_puo;
 }
+
+public function eta(){
+         $eta = date_diff(Auth()->user()->DataNascita, date_create(date('Y/m/d', time())));
+         return $eta->format('%y');
+     }
+
 }
