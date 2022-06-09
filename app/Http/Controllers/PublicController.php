@@ -32,28 +32,32 @@ class PublicController extends Controller
         return view('FAQ')
                ->with('faq', $faq);
     }
-
+    
+    // mostra il catalogo filtrato tramite nome della citta e tramite i checkbox 
+    public function showByCityandCheckBox(Request $request){
+        $data = $request->all();
+        if(!isset($data['citta']) && !isset($data['tipoalloggio'])){
+            $tutti_alloggi = $this->_catalogoModel->ritornaAlloggi();
+            return view('home')
+               ->with('catalogo_intero', $tutti_alloggi);
+        }
+        elseif(isset($data['citta']) && isset($data['tipoalloggio'])){
+            $filtrati = $this->_catalogoModel->filtraggioIniziale($data['citta'],$data['tipoalloggio']);
+        }
+        elseif(!isset($data['citta']) && isset($data['tipoalloggio'])){
+            $filtrati = $this->_catalogoModel->filtraggioInizialeAlloggio($data['tipoalloggio']);
+        }
+        elseif(!isset($data['tipoalloggio']) && isset($data['citta'])){
+            $filtrati = $this->_catalogoModel->filtraggioInizialeCitta($data['citta']);
+        }
+        return view('home',compact('filtrati','data'));
+       
+    }
     // mostra catalogo intero
     public function showCatalog(){
         $tutti_alloggi = $this->_catalogoModel->ritornaAlloggi();
         return view('home')
                ->with('catalogo_intero', $tutti_alloggi);
-    }
-    
-    // mostra il catalogo filtrato tramite nome della citta e tramite i checkbox 
-    public function showByCityandCheckBox(Request $request){
-        $data = $request->all();
-        if(isset($data['citta']) && isset($data['tipoalloggio'])){
-            $filtrati = $this->_catalogoModel->filtraggioIniziale($data['citta'],$data['tipoalloggio']);
-        }
-        elseif(!isset($data['citta'])){
-            $filtrati = $this->_catalogoModel->filtraggioInizialeAlloggio($data['tipoalloggio']);
-        }
-        elseif(!isset($data['tipoalloggio'])){
-            $filtrati = $this->_catalogoModel->filtraggioInizialeCitta($data['citta']);
-        }
-        return view('home',compact('filtrati','data'));
-       
     }
 
     //mostra l'alloggio che viene selezionato cliccando il titolo

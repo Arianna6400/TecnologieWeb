@@ -29,6 +29,15 @@ class DatabaseSeeder extends Seeder
             ['Citta' => 'Pescara', 'Via' => 'Marconi', 'NumCivico' => '420', 'Costo' => 280, 'PeriodoInizio' => date("2022-06-08"),
              'PeriodoFine' => date("2022-07-09"), 'Metratura' => 500, 'NumOpzionate' => 0, 'Disponibilita' => 1,"Descrizione" => "Appartamento spazioso in zona vicino all'università di Pescara",
              'Tipo' => 'Appartamento', 'Foto' => 'app4.jpeg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             ['Citta' => 'Torino', 'Via' => 'Roma', 'NumCivico' => '12', 'Costo' => 210, 'PeriodoInizio' => date("2022-06-06"),
+             'PeriodoFine' => date("2022-08-08"), 'Metratura' => 100, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "stanza singola in centro ben collegata",
+             'Tipo' => 'Stanza singola', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             ['Citta' => 'Napoli', 'Via' => 'brombeis', 'NumCivico' => '32', 'Costo' => 110, 'PeriodoInizio' => date("2022-06-12"),
+             'PeriodoFine' => date("2022-11-08"), 'Metratura' => 110, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "stanza doppia in periferia ben collegata",
+             'Tipo' => 'Stanza doppia', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
+             ['Citta' => 'Pescara', 'Via' => 'torrente piomba', 'NumCivico' => '12', 'Costo' => 260, 'PeriodoInizio' => date("2022-06-06"),
+             'PeriodoFine' => date("2022-10-08"), 'Metratura' => 110, 'NumOpzionate' => 0, 'Disponibilita' => 1,'Descrizione' => "appartamento vicino al mare",
+             'Tipo' => 'Appartamento', 'Foto' => '1f3e0.jpg','created_at'=> date("Y-m-d H:i:s"),'updated_at' => date("Y-m-d H:i:s")],
         ]);
 
         DB::table('caratteristiche')->insert([
@@ -40,6 +49,12 @@ class DatabaseSeeder extends Seeder
             'NumBagni' => NULL, 'PostiLettoTot' => 4, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
             ['ID' => 4, 'Ripostiglio' => 1, 'Sala' => 0, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
             'NumBagni' => 2, 'PostiLettoTot' => 2, 'EtaMinima' => 18, 'NumStanzeLetto' => 3],
+            ['ID' => 5, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 1, 'NumeroLocali' => NULL,
+            'NumBagni' => NULL, 'PostiLettoTot' => 1, 'EtaMinima' => 20, 'NumStanzeLetto' => NULL],
+            ['ID' => 6, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'F', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 0, 'NumeroLocali' => NULL,
+            'NumBagni' => NULL, 'PostiLettoTot' => 2, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
+            ['ID' => 7, 'Ripostiglio' => 0, 'Sala' => 1, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
+            'NumBagni' => 2, 'PostiLettoTot' => 5, 'EtaMinima' => 18, 'NumStanzeLetto' => 2],
         ]);
 
         DB::table('utenti')->insert([
