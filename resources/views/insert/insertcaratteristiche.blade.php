@@ -94,7 +94,7 @@
     @endif
     <div class="form-group">
         {{ Form::label('EtaMinima', 'Età Minima', ['class' => 'label-input']) }}
-        {{ Form::text('EtaMinima', '', ['class' => 'text_label', 'id' => 'EtaMinima', 'required']) }}
+        {{ Form::number('EtaMinima', '', ['class' => 'text_label', 'id' => 'EtaMinima', 'required']) }}
             @if ($errors->first('EtaMinima'))
                 <ul class="errors">
                     @foreach ($errors->get('EtaMinima') as $message)
@@ -115,6 +115,12 @@
                 </ul>
                 @endif
     </div>
+    @endif
+    @if($alloggio->Tipo == 'Stanza Singola')
+    {{Form::hidden('PostiLettoTot', '1' )}}
+    @endif
+    @if($alloggio->Tipo == 'Stanza Doppia')
+    {{Form::hidden('PostiLettoTot', '2' )}}
     @endif
     <div  class="wrap-input  rs1-wrap-input">
       {{ Form::submit('Conferma', ['style' => 'background-color: #32aaee; border: 0px; color: white; padding-top: -2%;' , 'class' => 'btn btn-primary btn-lg']) }}
