@@ -25,7 +25,7 @@ class ModifyProfiloRequest extends FormRequest
     {
         return [
             'Nome' => 'alpha|max:25',
-            'Cognome' => 'alpha|max:25',
+            'Cognome' => 'max:25',
             'DataNascita' => 'before:today',
             'Sesso' => 'max:25',
             'Username' => 'max:25',
