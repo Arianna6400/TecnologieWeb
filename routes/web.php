@@ -86,6 +86,8 @@ Route::post('submit','LocatoreController@save2')->name('submit');
 Route::get('/locatario', 'LocatarioController@showAllLocal')
         ->name('locatario');
 
+Route::get('/locatario/offerta/{id}', 'LocatarioController@showOfferta')->name('offertalocatario');
+
 Route::get('locatario/chat', 'LocatarioController@chat')->name('chatlocatario');
 
 Route::get('locatario/catalogo/filtro/{filtro}/scelta/{scelta}', 'LocatarioController@showFilteredLocal')->name('catalogofiltrato');

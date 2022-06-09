@@ -41,28 +41,20 @@
     @isset($offerta)
             @auth
                 @if(auth()->user()->role== 'Locatario')
-                    @if($offerta->Disponibilita == 0)
-                        <p>Non puoi opzionare perchè alloggio è pieno</p>
-                    @endif
-                        @isset($esito)
-                        {{$esito->Descrizione}}
-                            @if($esito != '1')
+                    @if($offerta->Disponibilita != 0)
+                        @empty($opzionateDa)
                                 @csrf
                                     {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
                                     {{ Form::text('Username', Auth()->user()->Username, ['class' => 'input', 'id' => 'User' , 'required', 'hidden']) }}
                                     {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
                                     {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
-                            @else
-                                <p>Non puoi opzionare perchè hai già opzionato un alloggio</p>
-                            @endif
-                        @endisset 
-                        @empty($esito)
-                            <p>Empty</p>
-                            {{ Form::open(array('route' => array('opzionato', $offerta->ID), 'id' => 'addinterazione')) }}
-                            {{ Form::text('Username', Auth()->user()->Username, ['class' => 'input', 'id' => 'User' , 'required', 'hidden']) }}
-                            {{ Form::number('ID', $offerta->ID, ['class' => 'input', 'id' => 'offerta' , 'required' , 'hidden']) }}
-                            {{ Form::submit('Opziona', ['class' => 'btn btn-primary btn-lg']) }}
                         @endempty
+                        @isset($opzionateDa)
+                            <p>Non puoi opzionare perchè hai già opzionato un alloggio</p>
+                        @endisset
+                    @else
+                        <p>Non puoi opzionare perchè alloggio è pieno</p>
+                    @endif
                 @endif
             @endauth
             @guest
