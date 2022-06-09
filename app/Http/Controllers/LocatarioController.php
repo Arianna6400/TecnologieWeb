@@ -85,8 +85,6 @@ class LocatarioController extends Controller
     
     //da opzionate contatta proprietario
     public function nuovaFormMessaggio($IdAlloggio,$usernameDest){
-        echo $IdAlloggio;
-        echo $usernameDest;
         date_default_timezone_set("Europe/Rome");
         return view('insert/insertMessage')
         ->with('usernameLoggato', Auth::user()->Username)
@@ -109,10 +107,10 @@ class LocatarioController extends Controller
     
     //mostra l'alloggio opzionato dal locatario
     public function showMiaOpzionata() {
-        echo $this->_mieOfferte->proprietario($this->_opzionate->opzionatoLocatario(Auth::user()->Username));
+        $alloggio_opzionato =  $this->_opzionate->opzionatoLocatario(Auth::user()->Username)->first();
         return view('opzionate')
             ->with('alloggi_opzionati', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))
-            ->with('proprietario', $this->_mieOfferte->proprietario($this->_opzionate->opzionatoLocatario(Auth::user()->Username)));
+            ->with('proprietario', $this->_mieOfferte->proprietario($alloggio_opzionato->ID));
     }
     
     

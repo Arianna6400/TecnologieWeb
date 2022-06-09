@@ -80,6 +80,10 @@ class DatabaseSeeder extends Seeder
             ['Username' => 'marco', 'ID' => 2],
             ['Username' => 'marco', 'ID' => 3],
             ['Username' => 'lorelore', 'ID' => 4],
+            ['Username' => 'lorelore', 'ID' => 5],
+            ['Username' => 'lorelore', 'ID' => 6],
+            ['Username' => 'marco', 'ID' => 7],
+            
         ]);
         
         DB::table('messaggio')->insert([
