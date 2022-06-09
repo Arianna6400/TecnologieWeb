@@ -5,6 +5,19 @@ use App\Models\Resource\Alloggio;
 use App\Models\Resource\Caratteristiche;
 
 Class Filtri{
+    
+public function filtroCitta($scelta){
+    return Alloggio::where('Citta', $scelta)->get();
+}
+
+public function filtroTipo($scelta){
+    switch ($scelta){
+        case 'appartamento': return Alloggio::where('Tipo', 'Appartamento')->get();
+        case 'stanza_singola': return Alloggio::where('Tipo', 'Stanza singola')->get();
+        case 'stanza_doppia': return Alloggio::where('Tipo', 'Stanza doppia')->get();
+            
+    }
+}
 
 public function filtroDimensione($max, $min){
     return Alloggio::where('Metratura', '>' , $min)->where('Metratura', '<' , $max)->get();
@@ -22,16 +35,16 @@ return Alloggio::find($id);
 
 public function filtriDimensione($scelta){
 switch ($scelta){
-case 'metratura_1': return $this->filtroDimensione(100,50);
-case 'metrature_2': return $this->filtroDimensione(200, 101);
-case 'metratura_3': return $this->filtroDimensione(1000000, 201);
+case 'metratura_1': return $this->filtroDimensione(101,50);
+case 'metrature_2': return $this->filtroDimensione(201, 102);
+case 'metratura_3': return $this->filtroDimensione(1000000, 202);
 }
 }
 public function filtriPrezzo($scelta){
 switch ($scelta){
-case 'prezzo_1': return $this->filtroPrezzo(300,200);
-case 'prezzo_2': return $this->filtroPrezzo(400, 301);
-case 'prezzo_3': return $this->filtroPrezzo(1000000, 401);
+case 'prezzo_1': return $this->filtroPrezzo(301,200);
+case 'prezzo_2': return $this->filtroPrezzo(401, 302);
+case 'prezzo_3': return $this->filtroPrezzo(1000000, 402);
 }
 }
 
@@ -95,7 +108,12 @@ return Alloggio::find($id);
 }
 
 public function filtroNumeroBagni($scelta){
-$id = Caratteristiche::where('NumBagni', 2)->select('ID')->get();
+if($scelta==1){
+    $id = Caratteristiche::where('NumBagni', $scelta)->select('ID')->get();
+}
+else{
+    $id = Caratteristiche::where('NumBagni', '>=',$scelta)->select('ID')->get();
+}
 return Alloggio::find($id);
 }
 
@@ -119,15 +137,15 @@ return Alloggio::find($id);
 public function filtroEtaMinima($scelta){
 switch($scelta){
 case '18': {
-$id = Caratteristiche::where('EtaMinima', '>' , 18)->select('ID')->get();
+$id = Caratteristiche::where('EtaMinima', '>=' , 18)->select('ID')->get();
 return Alloggio::find($id);
 }
 case '25': {
-$id = Caratteristiche::where('EtaMinima', '>' , 25)->select('ID')->get();
+$id = Caratteristiche::where('EtaMinima', '>=' , 25)->select('ID')->get();
 return Alloggio::find($id);
 }
 case '30': {
-$id = Caratteristiche::where('EtaMinima', '>', 30)->select('ID')->get();
+$id = Caratteristiche::where('EtaMinima', '>=', 30)->select('ID')->get();
 return Alloggio::find($id);
 }
 }
