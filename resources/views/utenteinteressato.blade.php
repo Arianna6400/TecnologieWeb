@@ -20,7 +20,7 @@
   @isset($idAlloggio)
   @csrf
  <div class= "contenitore" style="margin-bottom: 100px;">
-      <a class="btn btn-primary btn-lg" style= "background-color: #32aaee; border: 0px; color: white; padding-top: -2%;" type="submit" href="{{route('nuovomessaggioLocatorePerOpzionato', [$idAlloggio, $utenteinteressato->Username])}}">Contatta</a>
+      <a class="btn btn-primary btn-lg" style= "background-color: #32aaee; border: 0px; color: white; padding-top: -2%;" type="submit" href="{{route('nuovomessaggioLocatorePerOpzionato', [$idAlloggio->ID, $utenteinteressato->Username])}}">Contatta</a>
       <hr>
       <div class="cont">
         <h4>Informazioni anagrafiche di {{$utenteinteressato->Username}} :</h4>
