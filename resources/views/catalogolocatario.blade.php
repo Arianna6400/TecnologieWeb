@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="{{asset('css/stile.css')}}">
 
 </head>
- <body style="background-image: url(images/Geometric3.png);">
+ <body style="background-image: url({{asset('images/Geometric3.png')}});">
 @section('content')
   <div class="introwho3">
   </div>
 
-  <div class="intro" style="background-image: url(images/imagewall.jpg);">
+  <div class="intro" style="background-image: url({{asset('images/imagewall.jpg')}});">
       <div class="title2">
     <h2 class="benvenuto">Benvenuto/a {{ Auth::user()->Nome }} {{ Auth::user()->Cognome }} !</h2>
     <hr class="linea" style="border-bottom: 0px;">
@@ -27,7 +27,7 @@
           profilo utente ed eventualmente modificare i tuoi dati. Buona navigazione!</h5>
     </div>
     <div class=" col offset-md-1">
-    <img src="images/logouni.png" class="logo">
+    <img src="{{asset('images/logouni.png')}}" class="logo">
     </div>
   </div>
   </div>
