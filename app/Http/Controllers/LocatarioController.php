@@ -181,28 +181,6 @@ class LocatarioController extends Controller
     public function showProfile(){
         return view('profilo')->with('utente',auth()->user());
     }
-    //permette di modificare il profilo prendendo i dati da una request
-    public function updateProfile(){
- 
-    }
-    
-    //permette di mostra gli alloggi compresi di filtri presi da una request
-    public function showFilteredHouse(){
-        
-    }
-    // permette di ozionare un alloggio, la richiesta di opzione viene sempre gestita da una request
-    public function houseOption(){
-        
-    }
-    // permette di visualizzare la chat(permette di mandare un messaggio?)
-    public function showChat(){
-        
-    }
-    
-     // permette di inviare un messaggio, va passato l'id del mittente e l'id del destinatario
-    public function sendMessage(){
-        
-    }
     
     
 }

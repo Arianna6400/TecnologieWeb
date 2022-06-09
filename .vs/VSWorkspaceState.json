@@ -6,12 +6,12 @@
     "\\app\\Models\\Resource",
     "\\database",
     "\\database\\migrations",
+    "\\database\\seeds",
     "\\public",
     "\\resources",
     "\\resources\\views",
     "\\resources\\views\\auth",
     "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\offerta.blade.php",
   "PreviewInSolutionExplorer": false
 }

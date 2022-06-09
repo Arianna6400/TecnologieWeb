@@ -35,6 +35,8 @@ class NewAlloggioRequest extends FormRequest
             'Descrizione' => 'required',
             'Tipo' => 'required|max:14',
             'Foto' => 'required|max:150',
+            'created_at' => '',
+            'updated_at' => '',
         ];
     }
 }
