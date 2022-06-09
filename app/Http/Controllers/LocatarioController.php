@@ -54,6 +54,7 @@ class LocatarioController extends Controller
         //se ritorno true ho potuto fare l'inserimento, se ritorno false, o l'alloggio è pieno o ho già opzionato altro --> nella view 
         //se dentro esito c'è false non devo far vedere il tasto opziona
         return redirect('/locatario')
+            ->with('ozionato', $this->_opziona->opziona($idAlloggio, Auth()->user()->Username))
             ->with('disponibilità', $this->_opzionate->disponibili($idAlloggio));
     }
     // fa partire la vista 
@@ -105,7 +106,7 @@ class LocatarioController extends Controller
     
     //mostra l'alloggio opzionato dal locatario
     public function showMiaOpzionata() {
-        if ($this->_opzionate->opzionatoLocatario(Auth::user()->Username) != null){
+            if ($this->_opzionate->opzionatoLocatario(Auth::user()->Username) != null){
             $alloggio_opzionato =  $this->_opzionate->opzionatoLocatario(Auth::user()->Username)->first();
             return view('opzionate')
                 ->with('alloggi_opzionati', $this->_opzionate->opzionatoLocatario(Auth::user()->Username))

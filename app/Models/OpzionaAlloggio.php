@@ -9,7 +9,7 @@ use App\Models\Resource\Caratteristiche;
 class OpzionaAlloggio{
 
 public function opziona($idAlloggio, $usenameLocatario){
-    //qua ci dovrebbe andare == null? funziona senza, evidentemente la get torna qualcosa di strano (non il null)
+    
     if(Interazione::where('Username', $usenameLocatario)->first() == [])
     {
         $num = Alloggio::find($idAlloggio);
