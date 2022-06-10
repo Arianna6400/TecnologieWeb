@@ -60,7 +60,7 @@
     @if($alloggio->Tipo == 'Appartamento')
     <div class="form-group">
         {{ Form::label('NumeroLocali', 'Numero di locali', ['class' => 'label-input']) }}
-        {{ Form::text('NumeroLocali', '', ['class' => 'text_label', 'id' => 'NumeroLocali', 'required']) }}
+        {{ Form::number('NumeroLocali', '', ['class' => 'text_label', 'id' => 'NumeroLocali', 'required']) }}
             @if ($errors->first('NumeroLocali'))
                 <ul class="errors">
                     @foreach ($errors->get('NumeroLocali') as $message)
@@ -71,7 +71,7 @@
     </div>
     <div class="form-group">
         {{ Form::label('NumBagni', 'Numero Bagni', ['class' => 'label-input']) }}
-        {{ Form::text('NumBagni', '', ['class' => 'text_label', 'id' => 'NumBagni', 'required']) }}
+        {{ Form::number('NumBagni', '', ['class' => 'text_label', 'id' => 'NumBagni', 'required']) }}
             @if ($errors->first('NumBagni'))
                 <ul class="errors">
                     @foreach ($errors->get('NumBagni') as $message)
@@ -82,7 +82,7 @@
     </div>
     <div class="form-group">
         {{ Form::label('PostiLettoTot', 'Posti Letto Totali', ['class' => 'label-input']) }}
-        {{ Form::text('PostiLettoTot', '', ['class' => 'text_label', 'id' => 'PostiLettoTot', 'required']) }}
+        {{ Form::number('PostiLettoTot', '', ['class' => 'text_label', 'id' => 'PostiLettoTot', 'required']) }}
             @if ($errors->first('PostiLettoTot'))
                 <ul class="errors">
                     @foreach ($errors->get('PostiLettoTot') as $message)
@@ -106,7 +106,7 @@
     @if($alloggio->Tipo == 'Appartamento')
     <div class="form-group">
         {{ Form::label('NumStanzeLetto', 'Numero Stanze da Letto', ['class' => 'label-input']) }}
-        {{ Form::text('NumStanzeLetto', '', ['class' => 'text_label', 'id' => 'NumStanzeLetto', 'required']) }}
+        {{ Form::number('NumStanzeLetto', '', ['class' => 'text_label', 'id' => 'NumStanzeLetto', 'required']) }}
             @if ($errors->first('NumStanzeLetto'))
                 <ul class="errors">
                     @foreach ($errors->get('NumStanzeLetto') as $message)
