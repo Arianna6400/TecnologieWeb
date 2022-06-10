@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use DateTime;
 
 class Utenti extends Authenticatable {
-    protected $table ='Utenti';
+    protected $table ='utenti';
     protected $primaryKey = 'Username';
 
     protected $keyType = 'string';

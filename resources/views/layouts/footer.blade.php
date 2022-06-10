@@ -13,7 +13,7 @@
 <body>
     <div class="footer-basic bg-light">
         <footer>
-            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-linkedin"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <div class="social"><a href="https://www.instagram.com/_micheledirenzo_/"><i class="icon ion-social-instagram"></i></a><a href="https://www.linkedin.com/in/joshua-ciccolini-5a8797199/"><i class="icon ion-social-linkedin"></i></a><a href="https://twitter.com/itxary"><i class="icon ion-social-twitter"></i></a><a href="https://www.facebook.com/marco.ciammaichella.7"><i class="icon ion-social-facebook"></i></a></div>
             <p class="copyright">Università Politecnica Delle Marche © 2022</p>
         </footer>
     </div>

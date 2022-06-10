@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\app",
+    "\\app\\Models",
+    "\\app\\Models\\Resource",
     "\\database",
+    "\\database\\migrations",
     "\\database\\seeds",
-    "\\public",
-    "\\public\\css",
     "\\resources",
     "\\resources\\views",
-    "\\resources\\views\\insert",
-    "\\resources\\views\\layouts",
-    "\\routes"
+    "\\resources\\views\\auth"
   ],
-  "SelectedNode": "\\routes\\web.php",
+  "SelectedNode": "\\resources\\views\\chat.blade.php",
   "PreviewInSolutionExplorer": false
 }
