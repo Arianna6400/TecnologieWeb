@@ -67,7 +67,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'Nome' => ['required', 'string', 'max:25'],
             'Cognome' => ['required', 'string', 'max:25'],
-            'Username' => ['required', 'string', 'min:5', 'unique:utenti'],
+            'Username' => ['required', 'string', 'min:5', 'max:15', 'unique:utenti'],
             'Sesso' => ['required', 'string', 'max:1'],
             'DataNascita' => ['required', 'date'],
             'role' => ['required', 'string', 'max:14'],
