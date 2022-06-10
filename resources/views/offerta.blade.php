@@ -78,7 +78,7 @@
       @include('helpers/immaginiapp', ['attrs' => 'card-img', 'imgFile' => $offerta->Foto])
       </div>
       <div class="card-body">
-      <h3 class="card-title label">{{$offerta->Tipo}} {{$offerta->Citta}} in Via {{$offerta->Via}}, {{$offerta->Metratura}}mq, {{$offerta->Costo}}€</h3>
+      <h3 class="card-title label">{{$offerta->Tipo}} {{$offerta->Citta}} in Via {{$offerta->Via}}, {{$offerta->Metratura}}mq, {{$offerta->Costo}}€ al mese</h3>
       <p class="card-text label">{{$offerta->Descrizione}}</p>
       <p class="card-text"><small class="text-muted">Ultimo aggiornamento: {{$offerta->updated_at}}</small></p>
       @csrf

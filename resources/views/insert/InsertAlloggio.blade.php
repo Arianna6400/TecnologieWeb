@@ -57,7 +57,7 @@
     </div>
 </div>
     <div class="form-group form ">
-        {{ Form::label('Costo', 'Costo', ['class' => 'label-input']) }}
+        {{ Form::label('Costo', 'Costo mensile', ['class' => 'label-input']) }}
         {{ Form::number('Costo', '', ['style' => 'width: 100%;' ,'class' => 'text_label', 'id' => 'Costo', 'required']) }}
             @if ($errors->first('Costo'))
                 <ul class="errors">

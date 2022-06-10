@@ -31,7 +31,7 @@
                   <div class="card-body">
                       <!-- nel titolo andra messo citta, via, numero civico e costo -->
 
-                      <a href="{{route('offerta',['id' => $alloggio->ID ])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€</a>
+                      <a href="{{route('offerta',['id' => $alloggio->ID ])}}" class="card-title">{{$alloggio->Tipo}} {{$alloggio->Citta}} in Via {{$alloggio->Via}}, {{$alloggio->Metratura}}mq, {{$alloggio->Costo}}€ al mese</a>
 
                     <!-- aggiungere descrizione -->
                     <p class="card-text"> {{$alloggio->Descrizione}} </p>
