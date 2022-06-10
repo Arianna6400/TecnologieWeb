@@ -60,7 +60,6 @@
                     @endif
                     </div>
                     @if(Auth::user()->role == 'Locatario')
-                    <p>{{$alloggio->ID}}</p>
                     <a href="{{route('nuovomessaggioLocatarioPerOpzionato',[$alloggio->ID, $proprietario->Username])}}" class="card-title">Contatta il proprietario</a>
                     @endif
                     

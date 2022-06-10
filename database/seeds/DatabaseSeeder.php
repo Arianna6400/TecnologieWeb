@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             ['ID' => 1, 'Ripostiglio' => 0, 'Sala' => 1, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,
             'NumBagni' => 1, 'PostiLettoTot' => 3, 'EtaMinima' => 19, 'NumStanzeLetto' => 2],
             ['ID' => 2, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'F', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 1, 'NumeroLocali' => NULL,
-            'NumBagni' => NULL, 'PostiLettoTot' => 2, 'EtaMinima' => 23, 'NumStanzeLetto' => NULL],
+            'NumBagni' => NULL, 'PostiLettoTot' => 1, 'EtaMinima' => 23, 'NumStanzeLetto' => NULL],
             ['ID' => 3, 'Ripostiglio' => NULL, 'Sala' => NULL, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => NULL, 'AngoloStudio' => 0, 'NumeroLocali' => NULL,
             'NumBagni' => NULL, 'PostiLettoTot' => 4, 'EtaMinima' => 18, 'NumStanzeLetto' => NULL],
             ['ID' => 4, 'Ripostiglio' => 1, 'Sala' => 0, 'SessoRichiesto' => 'M', 'WiFi' => 1, 'Garage' => 0, 'AngoloStudio' => 1, 'NumeroLocali' => 4,

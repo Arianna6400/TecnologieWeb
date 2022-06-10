@@ -30,7 +30,6 @@ class Opzionate
         $postitotali = Caratteristiche::where('ID', $idAlloggio)->select('PostiLettoTot')->first();
         // ci ritorna il numero di posti opzionati dell'alloggio
         $numOpzionate = Alloggio::where('ID', $idAlloggio)->select('NumOpzionate')->first();
-        echo "id alloggio $idAlloggio";
         echo "Posti totali $postitotali->PostiLettoTot";
         echo "Numero opzionate $numOpzionate->NumOpzionate";
         if($postitotali->PostiLettoTot == $numOpzionate->NumOpzionate) {
